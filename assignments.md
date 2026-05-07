@@ -28,17 +28,17 @@ You can choose which assignments you want to do based on your skill level. Try t
 
 
 ## Module 1. Interactive programs + Conditional expressions and loops
-1. Write a program that [logs to the console](https://github.com/ilkkamtk/JavaScript-english/blob/main/vuorovaikutteiset_ohjelmat.md#console-log) this text: `I'm printing to console!` (**1p**)
+1. Write a program that [logs to the console](05-js1-interactive-programs.md#console-log) this text: `I'm printing to console!` (**1p**)
 
-2. Write a program that [prompts](https://github.com/ilkkamtk/JavaScript-english/blob/main/vuorovaikutteiset_ohjelmat.md#feed-reading) for user's name and then greets the user. Print the result to [the HTML document](https://github.com/ilkkamtk/JavaScript-english/blob/main/vuorovaikutteiset_ohjelmat.md#printing-into-a-web-page): `Hello, Name!` (**2p**)
-3. Write a program that prompts for three integers. The program prints the sum, product and average of the numbers to [the HTML document](https://github.com/ilkkamtk/JavaScript-english/blob/main/vuorovaikutteiset_ohjelmat.md#printing-into-a-web-page). (**3p**)
-   - remember to [convert strings to numbers](https://github.com/ilkkamtk/JavaScript-english/blob/main/vuorovaikutteiset_ohjelmat.md#changing-the-type) when adding them together.
+2. Write a program that [prompts](05-js1-interactive-programs.md#feed-reading) for user's name and then greets the user. Print the result to [the HTML document](05-js1-interactive-programs.md#printing-into-a-web-page): `Hello, Name!` (**2p**)
+3. Write a program that prompts for three integers. The program prints the sum, product and average of the numbers to [the HTML document](05-js1-interactive-programs.md#printing-into-a-web-page). (**3p**)
+   - remember to [convert strings to numbers](05-js1-interactive-programs.md#changing-the-type) when adding them together.
 4. In the Harry Potter children's books, the sorting hat assigns a new student at Hogwarts School of Witchcraft and Wizardry to one of the four classes, which are Gryffindor, Slytherin, Hufflepuff, and Ravenclaw. Write an electronic sorting hat that asks for a student's name and draws a room for that student. If you enter Anna as the name, for example, the program prints to the HTML document "Anna, you are Ravenclaw." (**3p**)
    - Use [math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) to draw a value (1, 2, 3 or 4)
-   - Once the number is drawn, you need to use a multiple choice structure ([if, else if, ..., else or switch](https://github.com/ilkkamtk/JavaScript-english/blob/main/valinta-toistorakenteet.md#conditional-expressions)).
+   - Once the number is drawn, you need to use a multiple choice structure ([if, else if, ..., else or switch](06-js2-control-structures.md#conditional-expressions)).
 5. Write a program that asks the user to enter a year and notifies the user whether the input year is a leap year. A year is a leap year if it is divisible by four. However, years divisible by 100 are leap years only if they are also divisible by 400. Print the result on the HTML document. (**3p**)
 6. Write a program that prints the text "Should I calculate the square root?" in a confirmation window. If the user selects OK, the program asks for the number and calculates and prints its square root to the HTML document. If the user selects Cancel, the program prints the text "The square root is not calculated." to the HTML document (**3p**)
-   - The confirmation window can be displayed with the function [confirm()](https://github.com/ilkkamtk/JavaScript-english/blob/main/BOM-DOM-event.md#confirm). The function returns true if the user selects OK. If the user selects Cancel, the function returns false.
+   - The confirmation window can be displayed with the function [confirm()](08-js4-dom-events.md#confirm). The function returns true if the user selects OK. If the user selects Cancel, the function returns false.
    - You cannot calculate the square root of a negative number. If the number entered by the user is negative, the program prints "The square root of a negative number is not defined" to the HTML document.
 7. Write a program that rolls user defined number of dice and displays the sum of the results of the dice rolls.(**2p**)
    - First, program asks the user for the number of dice rolls.
@@ -253,8 +253,8 @@ You can choose which assignments you want to do based on your skill level. Try t
    - **Not for the faint-hearted**. Don't do this if it interferes with the project. It's not worth it.
    - Create an app that shows the route from user defined address to school (Karaportti 2).
    - You need to have a form where user adds an address. After the form is submitted, the route is displayed on a map. Show also the starting and ending time of the trip. _Not_ each part, just the start and end times.
-   - Example: [JS](https://github.com/ilkkamtk/JavaScript-english/blob/main/api-esimerkit/js/esim4.js), [HTML](https://github.com/ilkkamtk/JavaScript-english/blob/main/api-esimerkit/esim4.html)
-      - You'll need [this Leaflet plugin](https://github.com/ilkkamtk/JavaScript-english/blob/main/api-esimerkit/js/Polyline.encoded.js) to make the example work.
+   - Example: [JS](api-examples/js/esim4.js), [HTML](api-examples/esim4.html)
+      - You'll need [this Leaflet plugin](api-examples/js/Polyline.encoded.js) to make the example work.
    - [Here is an example](https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/#basic-route-from-kamppi-helsinki-to-pisa-espoo) on how to use places/addresses with coordinates.
       - To get coordinates from address, you can use [address search ](https://digitransit.fi/en/developers/apis/2-geocoding-api/address-search/)
    - If you get cors errors (which is likely _not_ going to happen) [use this fix](https://github.com/ilkkamtk/corsfix).

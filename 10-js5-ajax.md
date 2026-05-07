@@ -133,13 +133,16 @@ A very handy tool for testing is [Postman](https://www.postman.com/downloads/). 
 Learn more about open APIs by [watching this video](https://www.youtube.com/watch?v=dStT9v5y6Tc).
 
 ### An example application that uses the OpenChargeMap interface
+
 - [Source code](https://github.com/ilkkamtk/sahkoauto)
 - [Link to the app](https://users.metropolia.fi/~ilkkamtk/sahkoauto/)
 
 ### Some examples of using APIs
-- [Link](api-esimerkit/README.md)
+
+- [Link](api-examples/README.md)
 
 # AJAX - Asynchronous JavaScript and XML
+
 ## A typical AJAX application
 Because the Ajax application dynamically modifies Web pages without the user having to navigate from one page to another, the operation of the Web application can be made to resemble that of standard desktop programs, such as Google Docs. Facebook is also a good example of an AJAX app.
 
