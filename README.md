@@ -12,12 +12,13 @@ _WIP_: New version 2026
 1. [Deploying a static website](04-website-deployment.md)
 1. [JavaScript 1: Interactive programs](05-js1-interactive-programs.md)
 1. [JavaScript 2: Control structures](06-js2-control-structures.md)
-
+1. [JavaScript 3: Arrays and functions](07-js3-arrays-functions.md)
+1. 
+1. _TODO:_ Building a web server with Python (copy & update from sw1)
+1. 
 
 ---
 
-2. Module 2
-   * [Arrays and functions](taulukot-funktiot.md)
 3. Module 3
    * [BOM, DOM and events](BOM-DOM-event.md)
 4. Module 4
