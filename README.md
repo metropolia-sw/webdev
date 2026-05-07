@@ -1,15 +1,16 @@
-# Getting started with Web Development
+# Software 2: Getting started with Web Development
 
 *Ilkka Kylmäniemi + Vesa Ollikainen + mattpe*
 
 ## Contents
 
-WIP: New 2026
+_WIP_: New version 2026
 
-- [Introduction to web technologies](01-intro-web-tech.md)
-- [Development tools and environment](02-web-dev-tools.md)
-- [Introduction to HTML and CSS layouts](03-html-css-layout.md)
-- [Deploying a static website](04-website-deployment.md)
+1. [Introduction to web technologies](01-intro-web-tech.md)
+1. [Development tools and environment](02-web-dev-tools.md)
+1. [Introduction to HTML and CSS layouts](03-html-css-layout.md)
+1. [Deploying a static website](04-website-deployment.md)
+1. [JavaScript 1: Interactive programs](05-js1-interactive-programs.md)
 
 
 ---
@@ -18,7 +19,7 @@ WIP: New 2026
    * [Javascript vs Python Syntax Cheatsheet](https://medium.com/geekculture/javascript-vs-python-syntax-cheatsheet-9bc7c59599c6)
    * [Programming environment](ohjelmointiymparisto.md)
 1. Module 1
-   * [Interactive programs](vuorovaikutteiset_ohjelmat.md)
+   [Interactive programs](vuorovaikutteiset_ohjelmat.md)
    * [Conditional expressions and loops](valinta-toistorakenteet.md)
 2. Module 2
    * [Arrays and functions](taulukot-funktiot.md)
@@ -41,3 +42,9 @@ WIP: New 2026
 ### Extra material
 
 [Some voluntary reading](extras.md)
+
+---
+
+## License
+
+<https://creativecommons.org/licenses/by-nc-sa/4.0/>?
