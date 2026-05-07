@@ -1,7 +1,8 @@
-# Conditional expressions
+# JavaScript 2 - Control Structures
 
-Conditional expression can be used to create alternative execution paths in a program.
-Which path is selected depends on the validity of the condition written by the programmer.
+## Conditional expressions
+
+Conditional expression can be used to create alternative execution paths in a program. Which path is selected depends on the validity of the condition written by the programmer.
 
 In JavaScript, a Conditional expression is implemented with an if clause. For example, the following program will ask the user for age and indicate if the user is a minor based on the input:
 
@@ -12,48 +13,61 @@ if (age < 18) {
 }
 ```
 
+The program flow can also be described with a flowchart. A flowchart is a graphical representation of the program’s execution path. It is a useful tool for understanding the program’s structure. The following shows the flowchart for the above program:
+
+```mermaid
+graph TD
+    A[Start: Prompt for age] --> B{Is age < 18?}
+    B -- Yes (true) --> C[Print to console: 'You are a minor.']
+    B -- No (false) --> E[End]
+    C --> E
+```
+
 In the conditional statement, the word `if` is followed by a logical expression inside the parentheses. In this case it is `age < 18`.
 
 The value of a logical expression is always `true` or `false`.
 
 The condition is written so that its value is true exactly when the conditional part of the program is to be executed.
 
-The conditional part of the program, i.e. the block, is delimited in brackets and indented according to established practice. In the example, the conditional part of the program contains one statement, which is a call to the `console.log ()` method.
-If there is only one statement in the block, the curly brackets are not be needed.
+The conditional part of the program, i.e. the block, is delimited in brackets and indented according to established practice. In the example, the conditional part of the program contains one statement, which is a call to the `console.log()` method.
+
+If there is only one statement in the block, the curly brackets are not be needed, but it is recommended to always use them to avoid errors when adding more statements later.
 
 If the condition is false, the conditional part is not executed. For example, with input 18, program execution jumps over a conditional program section.
 
-## Comparison operators
+### Comparison operators
 
 Comparison operators are usually needed to express a condition in a conditional statement. The following comparison operators are used in JavaScript:
+
 - equal to (`==`) or (`===`) 
 - different than (`!=`) or (`!==`)
 - greater than (`>`)
 - greater than or equal to (`>=`)
 - less than (`<`)
 - less than or equal to (`<=`)
-- 
-### Danger: Equality condition vs. assignment statement
+
+#### Danger: Equality condition vs. assignment statement
 
 Note the difference between the assignment operator (=) and the equality comparison operator (==). The following example is invalid code:
+
 ```javascript
 if (first = second) {
     console.log('Same values.')
 }
 ```
 
-Assignment statement in the condition of the conditional statement usually leads to incorrect operation.
-Technically, the value of the assignment statement becomes the value to be placed in the variable in the assignment statement.
-The proposed numeric value is automatically converted to a boolean value so that a non-zero number is true and zero is false.
+Assignment statement in the condition of the conditional statement usually leads to incorrect operation. Technically, the value of the assignment statement becomes the value to be placed in the variable in the assignment statement. The proposed numeric value is automatically converted to a boolean value so that a non-zero number is true and zero is false.
 
-## Logical operators
+### Logical operators
 
 Logical expressions can be combined using logical operators.
+
 - negation (`!`) reverses the truth value of the expression
 - and `&&` requires that both sides are true
 - or `||` requires that one or both parties be true.
 
 For example, the following program indicates if the integer entered by the user is both even and greater than 10:
+
 ```javascript
 const number = prompt('Enter an integer');
 if (number % 2 === 0 && number > 10) {
@@ -61,7 +75,7 @@ if (number % 2 === 0 && number > 10) {
 }
 ```
 
-## Conditional expression of two options
+### Conditional expression of two options
 
 In the conditional expression of the two mutually exclusive options, i.e. the `if-else` structure, an alternative block is also given, which is executed if the condition is false.
 
@@ -79,9 +93,21 @@ else {
 }
 ```
 
-## Multi-option selection conditional expression
+Flowchart for the above program:
+
+```mermaid
+graph TD
+    A[Start: Prompt for an number] --> B{Is number % 2 === 0?}
+    B -- Yes (true) --> C[Print to console: 'You entered an even number.']
+    B -- No (false) --> D[Print to console: 'You entered an odd number.']
+    C --> E[End]
+    D --> E
+```
+
+### Multi-option selection conditional expression
 
 The required number of `else if` branches is appended to the conditional structure of many mutually exclusive options. During execution, the original `if` branch is moved - or if its condition is false - the first `else-if` branch whose selection condition is met. The following program comments the age of an adult user:
+
 ```javascript
 const age = prompt('Enter your age');
 if (age >= 65) {
@@ -93,11 +119,28 @@ if (age >= 65) {
 }
 ```
 
+In flowchart, the above program can be represented as follows:
+
+```mermaid
+graph TD
+    A[Start: Prompt for age] --> B{Is age >= 65?}
+    B -- Yes (true) --> C[Print to console: 'You are of retirement age.']
+    B -- No (false) --> D{Is age >= 30?}
+    D -- Yes (true) --> E[Print to console: 'You are middle aged.']
+    D -- No (false) --> F{Is age >= 18?}
+    F -- Yes (true) --> G[Print to console: 'You are a young adult.']
+    F -- No (false) --> H[End]
+    C --> H
+    E --> H
+    G --> H
+```
+
 Note that the value of a logical expression in each branch is calculated only when the conditions of the upper branches have already been found to be false. For example, if the user enters the age of 38, the condition of the `if` branch (age 65 and over) will not be met and the value of the condition of the upper` else if` branch will be calculated. At this point, it is sufficient to test whether the age is at least 30 years, as it is already known that it is not 65 years or more.
 
 There is no `else` branch in the program; if the user enters the age of 17 years or less, the program will not print anything.
 
 If you always want to end up with an outcome, write the last branch as the `else` branch. The following program indicates whether the number entered by the user is positive, negative, or zero:
+
 ```javascript
 const number = prompt('Enter a number');
 if (number > 0) {
@@ -111,18 +154,20 @@ else {
 }
 ```
 
-## Nested conditional expression
+### Nested conditional expression
 
 Conditional structures (like other control structures) can be nested to implement programs with complex operating logic.
 
 As an example, consider the dosing regimen for an analgesic and write a program to determine the correct dose.
 
 The dosing instructions are as follows:
+
 - The dose for patients 12 years of age and older is 500 micrograms.
 - The dose for patients aged 2 to 11 years is 12.5 micrograms per kilogram body weight. However, the dose should not exceed the adult dose,
 - Do not give to patients under two years of age.
-- 
+
 The drug dose determination can be written as a JavaScript program as follows:
+
 ```javascript
 let age, weight, dose; // let is used because the variables are given values later
 age = prompt('Enter age of the patient.');
@@ -141,9 +186,10 @@ else {
 }
 console.log('The dose is ' + dose + ' micrograms.');
 ```
+
 Notice the new `if` statement inside the `else-if` branch, which will only be executed if that branch is reached.
 
-## Conditional expression of listed options (switch)
+### Conditional expression of listed options (switch)
 
 All programs that use a conditional expression can be written using the `if` conditional expression. However, the JavaScript language also provides another, `switch` conditional expression, in which branching occurs based on the value options of an expression.
 
@@ -166,34 +212,38 @@ switch (cabinClass) {
 }
 ```
 
-The expression following the word `switch` (here `class`) acts as a selector, the value of which determines which branch of execution
-will end up.
+The expression following the word `switch` (here `class`) acts as a selector, the value of which determines which branch of execution will end up.
 
 Each execution branch is started with the word `case`, followed by the value of the selector and a colon. After that, the statements to be executed in the branch are written, which do not need to be assembled inside the brackets. The branch ends with a `break` statement.
 
 The last `default` branch is always reached if the value of the user selector does not match the value in any of the `case` branches.
 
-Each branch (except the last `default` branch) ends with a `break` statement.
-The statement causes the `switch` selection structure to stop running immediately.
-Without the `break` statement, execution would continue from the statements in the `case` branch immediately below, even if the value of the selector does not match.
-Thus, if the `break` statement at the end of the branch corresponding to cabin A were deleted, the program would print two descriptions of cabin A: `Top deck cabin with window` and `Top deck cabin without window`.
+Each branch (except the last `default` branch) ends with a `break` statement. The statement causes the `switch` selection structure to stop running immediately.
 
-# Loops
+Without the `break` statement, execution would continue from the statements in the `case` branch immediately below, even if the value of the selector does not match. Thus, if the `break` statement at the end of the branch corresponding to cabin A were deleted, the program would print two descriptions of cabin A: `Top deck cabin with window` and `Top deck cabin without window`.
 
-Thanks to the loop structure, the execution of the program part can be repeated several times.
-The number of times may be known in advance or determined during execution.
+## Loops
 
-JavaScript has three loop structures
-- 'while' structure, where the validity of the loop condition is tested before each iteration
-- a 'do / while' structure whose loop condition value is tested after each iteration
-- for structure, where the repetition is usually based on the processing of the rotation variable
+Thanks to the loop structure, the execution of the program part can be repeated several times. The number of times may be known in advance or determined during execution.
 
-The structures are semantically equivalent. Any program could be written, even if only one of the above loop structures is used.
-However, some loop structures are better suited to certain situations than others: the programmer can choose the one that solves the problem the easiest.
+JavaScript has three loop structures:
 
-## While
+- `while` structure, where the validity of the loop condition is tested before each iteration
+- a `do / while` structure whose loop condition value is tested after each iteration
+- `for` structure, where the repetition is usually based on the processing of the rotation variable
+
+The structures are semantically equivalent. Any program could be written, even if only one of the above loop structures is used. However, some loop structures are better suited to certain situations than others: the programmer can choose the one that solves the problem the easiest.
+
+### While
 
 In the while loop structure, the program section is repeated for as long as the playback condition written by the program remains valid.
+
+```javascript
+while (condition) {
+    // block of code to be executed
+    // when the condition is true
+}
+```
 
 The program below throws a coin a hundred times. Finally, the program prints how many heads and tails were obtained.
 
@@ -210,9 +260,26 @@ console.log('Heads: ' + heads + ', tails: ' + tails)
 ```
 
 The output of the program is as follows:
+
 ```
 Heads: 53, tails: 47
 ```
+
+All control structures can be represented with a flowchart. The following flowchart describes the above program where `if-else` is nested inside the while loop:
+
+```mermaid
+graph TD
+    A[Start: Initialize heads and tails to 0] --> B{Is heads + tails < 100?}
+    B -- Yes (true) --> C[Generate random number r between 0 and 1]
+    C --> D{Is r > 0.5?}
+    D -- Yes (true) --> E[Increment heads by 1]
+    D -- No (false) --> F[Increment tails by 1]
+    E --> B
+    F --> B
+    B -- No (false) --> G[Print heads and tails]
+    G --> H[End]
+```
+
 Because the results of a coin toss are determined randomly, the result figures vary from run to run.
 
 The while structure can be used to respond to an invalid user input and require the user to re-enter the input until it is valid. For example, the following program checks that the weight entered by the user is positive.
@@ -227,37 +294,40 @@ while (weight <= 0) {
 console.log('You entered the weight: ' + weight + ' kg.');
 ```
 
-## do/while
+### do/while
 
-In the do/while statement, the validity of the repetition condition is tested only when the structure is exited. The repeatable program part is therefore always executed at least once.
+In the `do/while` statement, the validity of the repetition condition is tested only when the structure is exited. The repeatable program part is therefore always executed at least once.
 
 The following program rolls the dice and prints the resulting numbers until the dice become an eye number six:
 
 ```javascript
 let result;
 do {
-   result = Math.floor(Math.random()*6)+1;
-    console.log(result);
+  result = Math.floor(Math.random() * 6) + 1;
+  console.log(result);
 } while (result < 6);
 ```
-## for
 
-For is designed for situations where the number of iterations is based on a loop variable.
-Loop variable refers to a variable whose role is to keep track of the number of repetitions: the number is initially zero and is incremented by one at the end of each repetition.
-At some point, the value of the loop variable becomes so large that repetition ends. The loop condition that defines it is programmed into the for statement.
+### for
+
+For is designed for situations where the number of iterations is based on a loop variable. Loop variable refers to a variable whose role is to keep track of the number of repetitions: the number is initially zero and is incremented by one at the end of each repetition. At some point, the value of the loop variable becomes so large that repetition ends. The loop condition that defines it is programmed into the for statement.
 
 The following example prints numbers from one to ten:
+
 ```javascript
 for (let i = 1; i <= 10 ; i++) {
     console.log(i);
 }
 ```
+
 The example shows that there are three parts separated by semicolons between the parentheses after the word for:
+
 - Initial steps (`i = 1`)
 - loop condition (`i <= 10`)
 - final steps (`i++`)
 
 The execution of the loop proceeds in the following order:
+
 1. The initial steps are taken once upon entry into the structure.
 2. The value of the loop condition (true or false) is specified.
    - If the value is `true`, the block to be played is executed.
@@ -265,13 +335,16 @@ The execution of the loop proceeds in the following order:
 3. Complete the final steps and return to step 2.
 
 For example, the following program asks the user for a number and prints all even integers from zero to the number entered by the user:
+
 ```javascript
 const number = prompt('Enter the upper limit for even numbers.');
 for (let i = 0; i <= number ; i += 2) {
-    console.log(i);
+  console.log(i);
 }
 ```
+
 You can emulate while-loop with for by creating an infinite loop and then stopping it with `break`:
+
 ```javascript
 // ask for a name, stop when user enters empty value
 for (;;) {
@@ -282,9 +355,10 @@ for (;;) {
   console.log(name);
 }
 ```
-   - You can do this, but it is not recommended. Use an actual while loop instead.
 
-## Nested loop structures
+You can do this, but it is not recommended. Use an actual while loop instead.
+
+### Nested loop structures
 
 Sometimes it is necessary to produce value combinations of two or more variables: for example, when printing a multiplication table of numbers from one to five, the first multiplication factor must obtain all integer values from one to five and the second multiplication factor as well.
 
@@ -299,10 +373,13 @@ for (let i = 1; i <= 5; i++) {
     }
 }
 ```
+
 Note the use of two loop variables (`i` and `j`). In the outer loop structure, the loop variable `i` gets the value one in the first round, after which the loop variable in the inner loop structure goes through all the values from one to five.
+
 Thereafter, the loop variable of the outer loop structure increases to two, and the inner loop structure is again reviewed in its entirety. This is continued until the loop variable of the outer structure finally increases to six, at which point its loop condition has become untrue.
 
 The program produces the following output:
+
 ```
 1 times 1 is 1.
 1 times 2 is 2.
@@ -314,3 +391,14 @@ The program produces the following output:
 ...
 5 times 5 is 25.
 ```
+
+---
+
+<!-- add mermaid support for gh pages -->
+<script type="module">
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(element => {
+      element.classList.add("mermaid");
+    });
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+</script>

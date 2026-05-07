@@ -11,16 +11,11 @@ _WIP_: New version 2026
 1. [Introduction to HTML and CSS layouts](03-html-css-layout.md)
 1. [Deploying a static website](04-website-deployment.md)
 1. [JavaScript 1: Interactive programs](05-js1-interactive-programs.md)
+1. [JavaScript 2: Control structures](06-js2-control-structures.md)
 
 
 ---
 
-0. Prepare
-   * [Javascript vs Python Syntax Cheatsheet](https://medium.com/geekculture/javascript-vs-python-syntax-cheatsheet-9bc7c59599c6)
-   * [Programming environment](ohjelmointiymparisto.md)
-1. Module 1
-   [Interactive programs](vuorovaikutteiset_ohjelmat.md)
-   * [Conditional expressions and loops](valinta-toistorakenteet.md)
 2. Module 2
    * [Arrays and functions](taulukot-funktiot.md)
 3. Module 3
