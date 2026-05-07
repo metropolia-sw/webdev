@@ -1,18 +1,136 @@
-# Open application programming interfaces
-## Application programming interface, API
-Application programming interface is a definition according to which different programs can make requests and exchange information, i.e. talk to each other.
-The API is kind of an interpreter between two different systems. For example, the JavaScript [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation) retrieves device location information from the operating system and translates it into a format suitable for JavaScript.
+# JavaScript 5 - Asynchronous programming, AJAX and Open application programming interfaces
 
-## Open application programming interface
-[Watch this video](https://www.youtube.com/watch?v=dStT9v5y6Tc)
+## Asynchronous JavaScript
 
-The open application programming interface is a kind of data warehouse that can be read over the Internet. The open application programming interface can be a data-only interface that can only read data (e.g. [OpenWeatherMap](https://openweathermap.org/current)) or a functional interface that can also be used to store and edit data (e.g. [Google Calendar API](https://developers.google.com/workspace/calendar/api/guides/overview).
-* [List of open application programming interfaces](https://rapidapi.com/hub)
-* [List of Finnish open application programming interfaces](https://www.avoindata.fi/fi)
+In previous JavaScript lessons, we have been writing mostly synchronous code. This means that the code is executed line by line, and the next line of code is not executed until the previous line has finished executing. With _events_ we used _callback_ functions that are called when the event occurs, not immediately when the code is executed. This is an example of asynchronous programming. Asynchronous programming allows us to write code that can run in the background while other code is still running normally.
+
+Other example of asynchronous programming are timers. With [`setTimeout`](https://www.geeksforgeeks.org/javascript/settimeout-in-javascript/) and [`setInterval`](https://www.geeksforgeeks.org/javascript/javascript-setinterval-method/) functions we can schedule code to run after a certain amount of time has passed. This allows us to run code at regular intervals. Callback functions are used with timers as well. The callback function is called when the timer expires:
+
+```javascript
+setTimeout(function() {
+  console.log("This message is printed once after 2.5 seconds");
+}, 2500);
+
+setInterval(function() {
+  console.log("This message is printed every 5 seconds");
+}, 5000);
+```
+
+Because the execution environment of JavaScript is single-threaded, time-consuming operations cannot be waited synchronously, i.e., so that a single thread waits for the execution of the call, in which case the program does nothing else and is unresponsive. This would be a bad user experience. For this reason, in JavaScript, many things, such as network requests and file processing, are done asynchronously.
+
+## AJAX - Asynchronous JavaScript and XML
+
+Ajax is a technique for making asynchronous network requests from a web page. This allows us to retrieve data from a server without having to reload the page. This is done using the [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) function, which is a modern way to make network requests in JavaScript. The `fetch` function returns a promise, which is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+```mermaid
+flowchart LR
+    A["Browser (Client)"] -->|"HTTP Requests (GET web page files)"| B["Web Server"]
+    B -->|HTML, CSS, JS Responses| A
+
+    A -->|Runs JavaScript| C["JS app (in browser)"]
+
+    C -->|"AJAX Request (fetch)"| D["Data API Server"]
+    D -->|"JSON Response (promise)"| C
+
+    C -->|"Update UI (DOM) with data after promise is resolved"| A
+```
+
+Tradionally, [XML](https://www.w3schools.com/xml/xml_whatis.asp) was used as the data format for AJAX requests, but nowadays JSON is more commonly used.
+
+[JSON](https://www.w3schools.com/whatis/whatis_json.asp) is a lightweight data format that is easy to read and write, and it is supported by most programming languages. JSON stands for JavaScript Object Notation, and it is a way to represent data as a JavaScript object. For example, the following JSON data represents a person:
+
+```json
+{
+  "name": "John Doe",
+  "age": 30,
+  "email": "john.doe@example.com"
+}
+```
+
+Promises are a way to handle asynchronous operations in JavaScript. A promise can be in one of three states: pending, fulfilled, or rejected. When a promise is fulfilled, it means that the asynchronous operation has completed successfully and the promise has a value. When a promise is rejected, it means that the asynchronous operation has failed and the promise has a reason for the failure.
+
+```mermaid
+flowchart TD
+    A["Call async function in main application"] --> B["Start async task"]
+    B -->|pending| C["await pauses execution and waits for the promise to resolve"]
+    A --> G["Main application continues to run while async task is running without waiting for the async task to finish"]
+
+    C -->|fulfilled| D["Continue with result"]
+    C -->|rejected| E["catch block handles error"]
+
+    D --> F["Async task ends"]
+    E --> F
+```
+
+For example, we can fetch data from a server like this by using an asynchronous function:
+
+```javascript
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.tvmaze.com/search/shows?q=emmerdale');
+    if (!response.ok) { // Check if the response is successful (status code 200-299)
+      throw new Error('HTTP error! status: ' + response.status);
+    }
+    const data = await response.json();
+    console.log('Fetched data:', data);
+    return data; // This will return a promise that resolves to the data
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+fetchData();
+console.log('This message is printed before the data is fetched');
+```
+
+Function makes an http request to the specified URL which in this case is `https://api.tvmaze.com/search/shows?q=emmerdale`. It gets data about TV shows that match the search term "emmerdale" from open TV show database API called [TVMaze](https://www.tvmaze.com/api). Read more about APIs [below](#application-programming-interface-api).
+
+The `await` keyword is used to wait for the promise returned by `fetch` to be resolved. Once the promise is resolved, we can access the response and read it as JSON format. The `response.json()` method is used to parse the response as JSON, and it also returns a promise. We use `await` again to wait for the JSON conversion to complete before logging the data to the console as a JavaScript object.
+
+This example also demonstrates the use of `try...catch` block to handle errors that may occur during the asynchronous operation. If the fetch request fails, the error will be caught and logged to the console. If the network request is successful but the response status code indicates an error (e.g., 404 or 500), we `throw` an error to be caught in the catch block.
+
+If asynchronous function returns a value, it is wrapped in a promise. This means that we can use `await` to wait for the value to be returned from the asynchronous function (this example uses previously defined `fetchData()`):
+
+```javascript
+async function main() {
+  const data = await fetchData(); // Wait for the promise returned by fetchData to resolve
+  console.log('Data from fetchData function:', data);
+}
+main();
+```
+
+There is also another (traditional) way to handle promises without using the modern `async/await` syntax. We can use the `then` method of the promise to handle the resolved value and the `catch` method to handle any errors:
+
+```javascript
+fetch('https://api.tvmaze.com/search/shows?q=emmerdale')
+  .then(response => response.json()) // Parse the response as JSON
+  .then(data => {
+    console.log('Fetched data:', data); // Log the fetched data
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error); // Handle any errors that occur during the fetch
+  });
+```
+
+The `async/await` syntax is preferred for its readability and ease of use, especially when dealing with multiple asynchronous operations.
+
+---
+
+## Application Programming Interface (API)
+
+Application programming interface is a definition according to which different programs can make requests and exchange information, i.e. talk to each other. The API is kind of an interpreter between two different systems. For example, the JavaScript [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation) retrieves device location information from the operating system and translates it into a format suitable for JavaScript.
+
+### Open APIs
+
+The open application programming interface is a kind of data warehouse that can be read over the Internet. The open application programming interface can be a data-only interface that can only read data (e.g. [OpenWeatherMap](https://openweathermap.org/current)) or a functional interface that can also be used to store and edit data (e.g. [X API](https://docs.x.com/x-api/)). Open APIs are often used to provide data for web applications by using HTTP requests, but they can also be used for other purposes, such as machine learning and data analysis.
+
+- [List of open application programming interfaces](https://rapidapi.com/hub)
+- [List of Finnish open application programming interfaces](https://www.avoindata.fi/en)
 
 Open application programming interfaces are plentiful and most of them are well documented today. Many of the interfaces require some form of registration before they can be used. In addition, they can be tested before implementation.
 
 A very handy tool for testing is [Postman](https://www.postman.com/downloads/). It allows interfaces on the Internet to be tested without writing a single line of code.
+
+Learn more about open APIs by [watching this video](https://www.youtube.com/watch?v=dStT9v5y6Tc).
 
 ### An example application that uses the OpenChargeMap interface
 - [Source code](https://github.com/ilkkamtk/sahkoauto)

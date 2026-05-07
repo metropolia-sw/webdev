@@ -8,6 +8,7 @@ _WIP_: New version 2026
 
 1. [Introduction to web technologies](01-intro-web-tech.md)
 1. [Development tools and environment](02-web-dev-tools.md)
+   - [Using Jetbrains IDE](ohjelmointiymparisto.md) (_TODO:_ kummalla mennään?)
 1. [Introduction to HTML and CSS layouts](03-html-css-layout.md)
 1. [Deploying a static website](04-website-deployment.md)
 1. [JavaScript 1: Interactive programs](05-js1-interactive-programs.md)
@@ -15,12 +16,10 @@ _WIP_: New version 2026
 1. [JavaScript 3: Arrays and functions](07-js3-arrays-functions.md)
 1. [JavaScript 4: Document Object Model (DOM) and events](08-js4-dom-events.md)
 1. _TODO:_ Building a web server with Python (copy & update from sw1)
-1. 
+1. _WIP:_ [JavaScript 5: Asynchronous programming, Ajax and Open APIs](10-js5-ajax.md) 
+
 
 ---
-
-4. Module 4
-   * [Open APIs and AJAX](apit-ajax.md)
 
 ## Exercises
 
