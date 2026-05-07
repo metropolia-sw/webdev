@@ -13,14 +13,12 @@ _WIP_: New version 2026
 1. [JavaScript 1: Interactive programs](05-js1-interactive-programs.md)
 1. [JavaScript 2: Control structures](06-js2-control-structures.md)
 1. [JavaScript 3: Arrays and functions](07-js3-arrays-functions.md)
-1. 
+1. [JavaScript 4: Document Object Model (DOM) and events](08-js4-dom-events.md)
 1. _TODO:_ Building a web server with Python (copy & update from sw1)
 1. 
 
 ---
 
-3. Module 3
-   * [BOM, DOM and events](BOM-DOM-event.md)
 4. Module 4
    * [Open APIs and AJAX](apit-ajax.md)
 
