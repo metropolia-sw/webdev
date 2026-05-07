@@ -15,13 +15,14 @@ _WIP_: New version 2026
 1. [JavaScript 2: Control structures](06-js2-control-structures.md)
 1. [JavaScript 3: Arrays and functions](07-js3-arrays-functions.md)
 1. [JavaScript 4: Document Object Model (DOM) and events](08-js4-dom-events.md)
-1. _TODO:_ Building a web server with Python (copy & update from sw1)
+1. _TODO:_ replace DB, [Building a web server with Python](09-python-server.md)
 1. _WIP:_ [JavaScript 5: Asynchronous programming, Ajax and Open APIs](10-js5-ajax.md) 
-
 
 ---
 
 ## Exercises
+
+_TODO:_ Update!
 
 [Exercise sets](assignments.md)
 
