@@ -1,6 +1,6 @@
 # Assignments
-Create a folder for each module and inside each module create folder for each assignment. Create one HTML- and JavaScript file for each assignment. File names should contain the assignment's number. All HTML should be valid. Submit links that point to the module folder in users.metropolia.fi (not individual files) and to the GitHub repo of your JavaScript assignments.
 
+Create a folder for each module and inside each module create folder for each assignment. Create one HTML- and JavaScript file for each assignment. File names should contain the assignment's number. All HTML should be valid. Submit links that point to the module folder in users.metropolia.fi (not individual files) and to the GitHub repo of your JavaScript assignments.
 
 - [YouTube instructions for uploading](https://www.youtube.com/watch?v=CDXEu4piXRA&list=PLKenVLUxjmH-y89AiiI2xcXDy5QG83D4K&index=8)
 - [webdisk.metropolia.fi](https://webdisk.metropolia.fi/) can also be used to upload assignments
