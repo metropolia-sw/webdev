@@ -41,8 +41,8 @@ Handy keyboard shortcuts (finnish layout, check _File -> Preferences -> Keyboard
 ### WebStorm/PyCharm (optional)
 
 - free for Metropolia students. [Apply for license here](https://www.jetbrains.com/student/)
-    - _@metropolia.fi_ email address needed for a free license
-    - then install [ToolBox app](https://www.jetbrains.com/toolbox-app/)
+  - _@metropolia.fi_ email address needed for a free license
+  - then install [ToolBox app](https://www.jetbrains.com/toolbox-app/)
 - full-featured IDE
 - quite ready out of the box. No need for plugins.
 - based on IntelliJ IDEA, just like PyCharm
@@ -50,7 +50,7 @@ Handy keyboard shortcuts (finnish layout, check _File -> Preferences -> Keyboard
 ## Web browser & debugging
 
 - Chrome & [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
-- Browser renders the page based on HTML and CSS and runs the JavaScript code. 
+- Browser renders the page based on HTML and CSS and runs the JavaScript code.
 - DevTools allows you to inspect the page and see how it is rendered, debug JavaScript code, check network requests etc.
 - Keep DevTools _always_ open while developing to see the changes in real time and debug any issues.
 

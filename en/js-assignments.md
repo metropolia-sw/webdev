@@ -5,7 +5,8 @@ Create a folder for each module and inside each module create folder for each as
 - [YouTube instructions for uploading](https://www.youtube.com/watch?v=CDXEu4piXRA&list=PLKenVLUxjmH-y89AiiI2xcXDy5QG83D4K&index=8)
 - [webdisk.metropolia.fi](https://webdisk.metropolia.fi/) can also be used to upload assignments
 
-****
+---
+
 ### Example submission:
 
 [Link to users.metropolia.fi](https://users.metropolia.fi/~username/folder)
@@ -20,14 +21,14 @@ Completed assignments:
 
 **Total 11p**
 
-****
+---
 
 ## Read this before continuing
 
 You can choose which assignments you want to do based on your skill level. Try to do at least about 10 points worth of assignments (so at least 40%). The more points available in the assignment, the more challenging it is.
 
-
 ## Module 1. Interactive programs + Conditional expressions and loops
+
 1. Write a program that [logs to the console](05-js1-interactive-programs.md#console-log) this text: `I'm printing to console!` (**1p**)
 
 2. Write a program that [prompts](05-js1-interactive-programs.md#feed-reading) for user's name and then greets the user. Print the result to [the HTML document](05-js1-interactive-programs.md#printing-into-a-web-page): `Hello, Name!` (**2p**)
@@ -48,11 +49,11 @@ You can choose which assignments you want to do based on your skill level. Try t
    - Example output HTML code:
    ```html
    <ul>
-      <li>1992</li>
-      <li>1996</li>
-      <li>2000</li>
-      <li>2004</li>
-      <li>2008</li>
+     <li>1992</li>
+     <li>1996</li>
+     <li>2000</li>
+     <li>2004</li>
+     <li>2008</li>
    </ul>
    ```
 9. Write a program that asks the user for an integer and tells if the number is a prime number. (**2p**)
@@ -66,16 +67,16 @@ You can choose which assignments you want to do based on your skill level. Try t
     ```text
     Probability to get sum 7 with 2 dice is 15.64%
     ```
+
     - you can limit the number of decimals with [toFixed()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
     - test values:
-       -  2 dice, sum 7, probability is about 15-17%
-       -  3 dice, sum 15, probability is about 5%
-
+      - 2 dice, sum 7, probability is about 15-17%
+      - 3 dice, sum 15, probability is about 5%
 
 ## Module 2. Arrays and functions
 
 1. Write a program that prompts the user for five numbers and prints them in the reverse order they were entered (not reverse sorted). Print the result to the console.(**2p**)
-   - Save the numbers to an array, then use for-loop to iterate in reverse order. 
+   - Save the numbers to an array, then use for-loop to iterate in reverse order.
    - Do not use array.reverse() function.
 2. Write a program that asks the user for the number of participants. After this, the program asks for the names of all participants. Finally, the program prints the names of the participants on the web page in an ordered list (`<ol>`) in alphabetical order. (**2p**)
 3. Write a program that asks for the names of six dogs. The program prints dog names to unordered list `<ul>` in reverse alphabetical order. (**2p**)
@@ -98,20 +99,21 @@ You can choose which assignments you want to do based on your skill level. Try t
     - Store the candidates names and initial vote count in objects like this:
     ```javascript
     [
-        {
-            name: 'ellie',
-            votes: 0,
-        },
-        {
-            name: 'frank',
-            votes: 0,
-        },
-        {
-            name: 'pamela',
-            votes: 0,
-        },
-    ]
+      {
+        name: "ellie",
+        votes: 0,
+      },
+      {
+        name: "frank",
+        votes: 0,
+      },
+      {
+        name: "pamela",
+        votes: 0,
+      },
+    ];
     ```
+
     - The program asks for the number of voters.
     - The program asks each voter in turn who they will vote for. Voter should enter candidate name. If the voter enters an empty value instead of the voting number, it will be interpreted as an empty vote.
     - The program announces the name of the winner and the results by printing it to the console:
@@ -122,17 +124,20 @@ You can choose which assignments you want to do based on your skill level. Try t
     frank: 1 votes
     ellie: 1 votes
     ```
+
     - Some help:
     ```javascript
     // You need to compare votes so console log a and b to see how to get the correct property.
     someArray.sort((a, b) => {
-       console.log(a, b);
-       return b - a;
+      console.log(a, b);
+      return b - a;
     });
     ```
 
 ## Module 3. BOM, DOM and events
+
 [Download this ZIP-file](https://github.com/ilkkamtk/module3-starters), extract it and move the content to the folder where you have your other files for this course.
+
 1. Open `t1` folder in your IDE/editor. Add HTML by using innerHTML property (**2p**)
    - Add the following HTML code to the element with `id="target"`
    ```html
@@ -140,6 +145,7 @@ You can choose which assignments you want to do based on your skill level. Try t
    <li>Second item</li>
    <li>Third item</li>
    ```
+
    - Add class `my-list` to the element with `id="target"`
 2. Open `t2` folder in your IDE/editor. Add HTML by using `createElement()` and `appendChild` methods. (**2p**)
    - Add the following HTML code to the element with `id="target"`
@@ -148,6 +154,7 @@ You can choose which assignments you want to do based on your skill level. Try t
    <li>Second item</li>
    <li>Third item</li>
    ```
+
    - Add class `my-item` to the second list item
 3. Open `t3` folder in your IDE/editor. Add HTML by using innerHTML property. (**2p**)
    - Add the following HTML code to the element with `id="target"`. Add the values from 'names' array to the `<li>` elements in a for-loop.
@@ -163,17 +170,18 @@ You can choose which assignments you want to do based on your skill level. Try t
    <option value="2134657">Paul</option>
    <option value="5423679">Jones</option>
    ```
+
    - open Element Inspector from DevTools to see the full result. (right click, inspect...)
 5. Open `t5` folder in your IDE/editor. Create multiple `<article>` elements that contain heading, image, image caption and text and populate them with the data from `picArray`. Add the articles to the `<section>` element. (**5p**)
    - The structure of the articles should be this:
    ```html
    <article class="card">
-      <h2>title_from_picArray</h2>
-      <figure>
-         <img src="medium_image_from_picArray" alt="title_from_picArray">
-         <figcaption>caption_from_picArray</figcaption>
-      </figure>
-      <p>description_from_picArray</p>
+     <h2>title_from_picArray</h2>
+     <figure>
+       <img src="medium_image_from_picArray" alt="title_from_picArray" />
+       <figcaption>caption_from_picArray</figcaption>
+     </figure>
+     <p>description_from_picArray</p>
    </article>
    ```
 6. Open `t6` folder in your IDE/editor. Make a script that opens an alert window that says 'Button Clicked' when the `<button>` element is clicked. (**1p**)
@@ -193,34 +201,28 @@ You can choose which assignments you want to do based on your skill level. Try t
     - remember to stop the default action of the form
     - you can use [attribute selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) in querySelector() to select the `<input>` elements
     - example output: `Your name is Luke Skywalker`
-11. Continue task 5. Folder `t11` already exists. Follow the instructions in `t11.txt`. Modify the program to open large image in a [modal](#modal) when `<article>` is clicked. (**6p**)
-    - kick yourself at this point if you used innerHTML to create the `<article>` and its content.
-    - add the following html code between `</div>` and `</body>` manually to the HTML-document (no JS)
-    ```html
+11. Continue task 5. Folder `t11` already exists. Follow the instructions in `t11.txt`. Modify the program to open large image in a [modal](#modal) when `<article>` is clicked. (**6p**) - kick yourself at this point if you used innerHTML to create the `<article>` and its content. - add the following html code between `</div>` and `</body>` manually to the HTML-document (no JS)
+`html
     <dialog>
        <span>&#x2715;</span>
        <img>
     </dialog>
-    ```
-    - picArray has two images for each item: medium and large. Medium is used in the `<img>` inside the `<article>` and large is used in the `<img>` inside the `<dialog>`.
-    - use [showModal() and close()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) functions to show and hide `<dialog>`
-    - the same time you are opening the modal, you should put the large image to the `<img>` in the modal.
-    - Don't forget to add `alt` attribute.
-    - use `<span>` inside `<dialog>` to close the modal.
+    ` - picArray has two images for each item: medium and large. Medium is used in the `<img>` inside the `<article>` and large is used in the `<img>` inside the `<dialog>`. - use [showModal() and close()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) functions to show and hide `<dialog>` - the same time you are opening the modal, you should put the large image to the `<img>` in the modal. - Don't forget to add `alt` attribute. - use `<span>` inside `<dialog>` to close the modal.
 <hr>
 <sub id="modal"><sup>- A modal is a dialog box/popup window that is displayed on top of the current page</sup></sub>
 
-
 ## Module 4. AJAX
+
 1. Make an app that retrieves information about a TV series you enter and displays it in the console. (**2p**)
    - API to use: [TVMaze API](http://www.tvmaze.com/api#show-search)
    - First, make a valid HTML page with a search form. Example form:
    ```html
    <form action="https://api.tvmaze.com/search/shows">
-     <input id="query" name="q" type="text">
-     <input type="submit" value="Search">
+     <input id="query" name="q" type="text" />
+     <input type="submit" value="Search" />
    </form>
    ```
+
    - Test the form. The result should be a page full of JSON formatted data.
 2. Develop the app further.
    - Add JavaScript that gets the value entered to the form and sends a request with [fetch](apit-ajax.md#here-is-the-same-example-but-this-time-the-airport-code-is-entered-by-using-a-form) to `https://api.tvmaze.com/search/shows?q=${value_from_input}`. Print the search result to the console. (**3p**)
@@ -232,29 +234,30 @@ You can choose which assignments you want to do based on your skill level. Try t
    - some TV-shows don't have images. This will cause an error. You can fix this by adding ? operator to `image` property. Example: `tvShow.show.image?.medium;`. This is called [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining).
    - show summary in `<div>` element (not `<p>`). This is because the summary is already in `<p>` element, and the result will not be valid if `<p>` is inside another `<p>`.
    - collect the elements to `<article>` elements and append `<article>` elements to the HTML document.
-      - make `<div id="results">` element to the HTML document where you append the `<article>` elements.
+     - make `<div id="results">` element to the HTML document where you append the `<article>` elements.
    - clear the old results with `innerHTML = ''` before you append the new results.
 4. Develop the app even further. Optional chaining is not the best way to handle missing image. Use [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) or if/else to add a default image if TV-show is missing image property. (**2p**)
    - Use `https://placehold.co/210x295?text=Not%20Found` as the default image.
 5. Make an app that retrieves a random Chuck Norris joke and displays it in the console. (**2p**)
-    - API to use: [chucknorris.io](https://api.chucknorris.io/)
-    - Send a request to `https://api.chucknorris.io/jokes/random` and print only the joke to the console (that would be the 'value' property)
-    - No need to add a form.
+   - API to use: [chucknorris.io](https://api.chucknorris.io/)
+   - Send a request to `https://api.chucknorris.io/jokes/random` and print only the joke to the console (that would be the 'value' property)
+   - No need to add a form.
 6. Develop the app further (**4p**).
-    - Now add a form where you can enter a search term like in assignments 1-3
-    - Send the search term to `https://api.chucknorris.io/jokes/search?query=${value_from_input}` using `fetch()`
-    - Print each joke in this format:
-    ```html
-    <article>
-        <p>Joke here<p>
-    </article>
-    ```
-7. Advanced. Routing with [digitransit](https://digitransit.fi/en/developers/apis/1-routing-api/)  (**16p**)
+   - Now add a form where you can enter a search term like in assignments 1-3
+   - Send the search term to `https://api.chucknorris.io/jokes/search?query=${value_from_input}` using `fetch()`
+   - Print each joke in this format:
+   ```html
+   <article>
+     <p>Joke here</p>
+     <p></p>
+   </article>
+   ```
+7. Advanced. Routing with [digitransit](https://digitransit.fi/en/developers/apis/1-routing-api/) (**16p**)
    - **Not for the faint-hearted**. Don't do this if it interferes with the project. It's not worth it.
    - Create an app that shows the route from user defined address to school (Karaportti 2).
    - You need to have a form where user adds an address. After the form is submitted, the route is displayed on a map. Show also the starting and ending time of the trip. _Not_ each part, just the start and end times.
    - Example: [JS](api-examples/js/esim4.js), [HTML](api-examples/esim4.html)
-      - You'll need [this Leaflet plugin](api-examples/js/Polyline.encoded.js) to make the example work.
+     - You'll need [this Leaflet plugin](api-examples/js/Polyline.encoded.js) to make the example work.
    - [Here is an example](https://digitransit.fi/en/developers/apis/1-routing-api/itinerary-planning/#basic-route-from-kamppi-helsinki-to-pisa-espoo) on how to use places/addresses with coordinates.
-      - To get coordinates from address, you can use [address search ](https://digitransit.fi/en/developers/apis/2-geocoding-api/address-search/)
+     - To get coordinates from address, you can use [address search ](https://digitransit.fi/en/developers/apis/2-geocoding-api/address-search/)
    - If you get cors errors (which is likely _not_ going to happen) [use this fix](https://github.com/ilkkamtk/corsfix).

@@ -69,7 +69,7 @@ This way the backend service could be called by writing for example the address 
 
 When the backend service is called from a browser the resulting number is seen on the browser window:
 
-![Backend service response in a browser window](assets/flask_response.png)
+![Backend service response in a browser window](../assets/flask_response.png)
 
 At this point the backend service technically works, but the format of the result is not optimal to be processed programmatically.
 
@@ -104,7 +104,7 @@ if __name__ == '__main__':
 
 Now the program produces a JSON response which is easy to process for example by running a JavaScript code on a browser:
 
-![JSON response in a browser window](assets/flask_json.png)
+![JSON response in a browser window](../assets/flask_json.png)
 
 The simple backend service presented here can be used to build a more versatile backend service with the required amount of endpoints.
 
@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
 The service looks like this when viewed via a web browser:
 
-![Echo service in web browser](assets/flask_echo.png)
+![Echo service in web browser](../assets/flask_echo.png)
 
 The developer of the backend service can freely choose how the handling of the web address part after the domain and the country code is done. Particularly, the REST architecture style encourages the latter approach where the targeted resource is given as part of the actual web address instead of providing it as a parameter value.
 

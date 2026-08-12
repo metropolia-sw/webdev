@@ -21,17 +21,17 @@ You can add JavaScript into HTML by using the `<script>` element in two ways: in
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Testing JavaScript</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Example</h1>
     <script>
-        'use strict';
-        console.log('This is text is printed to the console.');
+      "use strict";
+      console.log("This is text is printed to the console.");
     </script>
-</body>
+  </body>
 </html>
 ```
 
@@ -40,8 +40,8 @@ You can add JavaScript into HTML by using the `<script>` element in two ways: in
 example.js:
 
 ```javascript
-  'use strict';
-  console.log('This is text is printed to the console.');
+"use strict";
+console.log("This is text is printed to the console.");
 ```
 
 example.html:
@@ -49,14 +49,14 @@ example.html:
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Testing JavaScript</title>
     <script src="example.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Example</h1>
-</body>
+  </body>
 </html>
 ```
 
@@ -79,7 +79,7 @@ Let's take a look at each printing method here. In the future, the use of the co
 The console log is generated using the `console.log()` method. The log output is usually displayed on the Console tab in the browser's developer tools.
 
 ```javascript
-console.log('Howdy partner!');
+console.log("Howdy partner!");
 ```
 
 Output in the console window:
@@ -93,12 +93,12 @@ Howdy partner!
 A pop-up message window is generated with the `alert` function:
 
 ```javascript
-alert('Hi from here too!');
+alert("Hi from here too!");
 ```
 
 The alert window that appears in the browser looks like this:
 
-![alert window](assets/alert.png)
+![alert window](../assets/alert.png)
 
 ### Printing into a web page
 
@@ -107,25 +107,26 @@ A JavaScript program can print HTML content as part of a web page by modifying t
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Testing JavaScript</title>
-</head>
-<body>
-<h1>Greeting</h1>
-<p id="target"></p>
-<script>
-    'use strict';
-    const name = 'Frank';
-    document.querySelector('#target').innerHTML = 'Good morning, ' + name + '!';
-</script>
-</body>
+  </head>
+  <body>
+    <h1>Greeting</h1>
+    <p id="target"></p>
+    <script>
+      "use strict";
+      const name = "Frank";
+      document.querySelector("#target").innerHTML =
+        "Good morning, " + name + "!";
+    </script>
+  </body>
 </html>
 ```
 
 The webpage you open looks like this in your browser:
 
-![printing to dom](assets/dom-print.png)
+![printing to dom](../assets/dom-print.png)
 
 We will learn how to manipulate the DOM in more detail later. For now, it is enough to understand that the `document.querySelector('#target')` part of the code finds the paragraph element with the id "target" and the `innerHTML` property of that element is set to a string that contains a greeting.
 
@@ -164,13 +165,13 @@ At this point, the variable is defined, that is, from the program point of view 
 The above variable can be initialized as follows:
 
 ```javascript
-name = 'Myles';
+name = "Myles";
 ```
 
 The variable could also be defined and initialized at the same time, which is actually more common:
 
 ```javascript
-const name = 'Myles';
+const name = "Myles";
 ```
 
 Variables are loosely typed, so when defining a variable, it is not necessary to say what value is to be stored in the variable — whether it is an integer (such as 17), a floating point number (such as 21.38), or a string (such as "computer").
@@ -182,11 +183,11 @@ For example, the following program defines two variables, the first of which sto
 ```javascript
 let number, name;
 number = 153;
-name = 'Anna';
+name = "Anna";
 console.log(number);
 console.log(name);
 number = -17;
-name = 'Pekka';
+name = "Pekka";
 console.log(number);
 console.log(name);
 ```
@@ -198,7 +199,7 @@ Output produced by the program:
 Anna
 -17
 Pekka
-```   
+```
 
 ### Variable types
 
@@ -216,12 +217,12 @@ In addition to the elementary types listed above, JavaScript has an object type 
 The type of the variable can be tested with `typeOf`-operation:
 
 ```javascript
-const name = 'Ahmed';
+const name = "Ahmed";
 console.log(typeof name);
- ```
+```
 
 The program prints out "string".
- 
+
 ### Changing the type
 
 A numeric variable can be converted to a string using the `toString` method:
@@ -234,8 +235,8 @@ const ageStr = age.toString();
 The conversion in the other direction can be done with the parseInt or parseFloat method:
 
 ```javascript
-const ageStr = '23';
-const moneyStr= '15.48';
+const ageStr = "23";
+const moneyStr = "15.48";
 
 const age = parseInt(ageStr);
 const money = parseFloat(moneyStr);
@@ -246,13 +247,13 @@ The conversion can also be done with the unary `+` operation:
 ```javascript
 const money = +moneyStr;
 ```
-        
+
 ### Combining strings
 
 String concatenation is performed with the `+` operation. For example, the following statement constructs an output of three substrings:
 
 ```javascript
-console.log('Good' + ' morning' + ' all.');
+console.log("Good" + " morning" + " all.");
 ```
 
 Printout:
@@ -265,12 +266,12 @@ Alternatively, the substrings and the concatenated string could be stored in the
 
 ```javascript
 let first, second, third, all;
-first = 'Good ';
-second = 'morning ';
-third = 'all.';
+first = "Good ";
+second = "morning ";
+third = "all.";
 all = first + second + third;
 console.log(all);
-```       
+```
 
 ## Template strings (Template literals)
 
@@ -284,7 +285,7 @@ Here is the second line`;
 The formal name of template string is template literal. They are called template strings because they are used most commonly for string interpolation (to create strings by doing substitution of placeholders). Syntax is similar to Pythons f-string:
 
 ```javascript
-const name = 'Mr. Skywalker';
+const name = "Mr. Skywalker";
 const greeting = `Hello ${name}`;
 ```
 
@@ -297,20 +298,20 @@ Such programs are rare. In general, it is desired that the user be able to provi
 The input is read by the [`prompt ()`](BOM-DOM-event.md#prompt-method) function. The argument to the function is given to a string, which is presented to the user in a dialog box. The following sentence asks the user for this name:
 
 ```javascript
-prompt('Type your name.');
+prompt("Type your name.");
 ```
 
 A dialog box will appear in the browser window:
 
-![dialog window](assets/dialog.png)
+![dialog window](../assets/dialog.png)
 
 In that form, however, the question is quite useless, as the name given by the user is not recovered. Thus, feeds read from the user are almost invariably stored in variables so that the read feeds can be used later in the program.
 
 The following example program asks for the user's name and greets them in person:
 
 ```javascript
-const name = prompt('Type your name.');
-console.log('Noice to meet you, ' + name);
+const name = prompt("Type your name.");
+console.log("Noice to meet you, " + name);
 ```
 
 ## Mathematical operations
@@ -329,8 +330,8 @@ The basic JavaScript calculations are:
 
 ```javascript
 let number = 3;
-number = number * 7;     // the value is now 21
-number = 1 + number/2;   // the value is now 11.5
+number = number * 7; // the value is now 21
+number = 1 + number / 2; // the value is now 11.5
 console.log(number);
 ```
 
@@ -341,8 +342,8 @@ The following operations can be used to change the value of a variable by one:
 
 ```javascript
 let number = 3;
-number++;     // the value is now 4
-number--;     // the value is again 3
+number++; // the value is now 4
+number--; // the value is again 3
 console.log(number);
 ```
 
@@ -355,10 +356,10 @@ You can also change the value more at once:
 
 ```javascript
 let number = 3;
-number *= 2;    // the value is now 6
-number /= 3;    // the value is now 2
-number += 7;   // the value is now 9
-number -= 8;    // the value is now 1
+number *= 2; // the value is now 6
+number /= 3; // the value is now 2
+number += 7; // the value is now 9
+number -= 8; // the value is now 1
 console.log(number);
 ```
 
@@ -384,10 +385,10 @@ For example, the following program could run seemingly successfully:
 ```javascript
 let diameter = 0;
 diametr = 2340;
-console.log('The diameter is : ' + diameter);
+console.log("The diameter is : " + diameter);
 ```
 
-However, the program prints zero as the diameter; this is due to a typo in the variable name by the programmer. The program initially creates a variable called `diameter` defined by the`let` statement. However, the second line places the value in a variable with a different name, accidentally misspelled `diametr`. In this case, another variable is automatically created.
+However, the program prints zero as the diameter; this is due to a typo in the variable name by the programmer. The program initially creates a variable called `diameter` defined by the `let` statement. However, the second line places the value in a variable with a different name, accidentally misspelled `diametr`. In this case, another variable is automatically created.
 
 Eventually, the program has two different variables, and the program prints a diameter of zero due to the fact that the correct value `2340` was placed in the wrong variable. Instead, the value of the correctly spelled variable defined by the `let` statement had remained at zero.
 
@@ -395,9 +396,9 @@ Situations such as those described create semantic errors that are difficult to 
 
 Therefore, the automatic creation of undefined global variables should be prevented. This can be done by adding a `use strict` statement to the beginning of the program, which is written in quotation marks as below:
 
- ```javascript
-'use strict';
- ```
+```javascript
+"use strict";
+```
 
 As a result, the program is executed in strict mode. In strict mode, an error message is printed whenever an attempt is made to place a value in an undefined variable. The global variable is no longer created automatically, but requires typing a `let` or` const` statement. Using this configuration changes any misspellings that the user accidentally makes that are not noticed to visible syntax errors. This makes it easier to write programs that work properly.
 
@@ -415,8 +416,8 @@ The following program asks the user for two values of calories and converts them
 
 ```javascript
 const multiplier = 4.1868;
-const k1 = prompt('Give the amount of energy for lunch (kcal).');
-const k2 = prompt('Enter the amount of energy for dinner(kcal).');
+const k1 = prompt("Give the amount of energy for lunch (kcal).");
+const k2 = prompt("Enter the amount of energy for dinner(kcal).");
 
 const j1 = multiplier * k1;
 const j2 = multiplier * k2;

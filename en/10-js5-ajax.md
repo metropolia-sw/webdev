@@ -7,11 +7,11 @@ In previous JavaScript lessons, we have been writing mostly synchronous code. Th
 Other example of asynchronous programming are timers. With [`setTimeout`](https://www.geeksforgeeks.org/javascript/settimeout-in-javascript/) and [`setInterval`](https://www.geeksforgeeks.org/javascript/javascript-setinterval-method/) functions we can schedule code to run after a certain amount of time has passed. This allows us to run code at regular intervals. Callback functions are used with timers as well. The callback function is called when the timer expires:
 
 ```javascript
-setTimeout(function() {
+setTimeout(function () {
   console.log("This message is printed once after 2.5 seconds");
 }, 2500);
 
-setInterval(function() {
+setInterval(function () {
   console.log("This message is printed every 5 seconds");
 }, 5000);
 ```
@@ -67,19 +67,22 @@ For example, we can fetch data from a server like this by using an asynchronous 
 ```javascript
 async function fetchData() {
   try {
-    const response = await fetch('https://api.tvmaze.com/search/shows?q=emmerdale');
-    if (!response.ok) { // Check if the response is successful (status code 200-299)
-      throw new Error('HTTP error! status: ' + response.status);
+    const response = await fetch(
+      "https://api.tvmaze.com/search/shows?q=emmerdale",
+    );
+    if (!response.ok) {
+      // Check if the response is successful (status code 200-299)
+      throw new Error("HTTP error! status: " + response.status);
     }
     const data = await response.json();
-    console.log('Fetched data:', data);
+    console.log("Fetched data:", data);
     return data; // This will return a promise that resolves to the data
   } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error("Error fetching data:", error);
   }
 }
 fetchData();
-console.log('This message is printed before the data is fetched');
+console.log("This message is printed before the data is fetched");
 ```
 
 Function makes an http request to the specified URL which in this case is `https://api.tvmaze.com/search/shows?q=emmerdale`. It gets data about TV shows that match the search term "emmerdale" from open TV show database API called [TVMaze](https://www.tvmaze.com/api). Read more about APIs [below](#application-programming-interface-api).
@@ -93,7 +96,7 @@ If asynchronous function returns a value, it is wrapped in a promise. This means
 ```javascript
 async function main() {
   const data = await fetchData(); // Wait for the promise returned by fetchData to resolve
-  console.log('Data from fetchData function:', data);
+  console.log("Data from fetchData function:", data);
 }
 main();
 ```
@@ -101,13 +104,13 @@ main();
 There is also another (traditional) way to handle promises without using the modern `async/await` syntax. We can use the `then` method of the promise to handle the resolved value and the `catch` method to handle any errors:
 
 ```javascript
-fetch('https://api.tvmaze.com/search/shows?q=emmerdale')
-  .then(response => response.json()) // Parse the response as JSON
-  .then(data => {
-    console.log('Fetched data:', data); // Log the fetched data
+fetch("https://api.tvmaze.com/search/shows?q=emmerdale")
+  .then((response) => response.json()) // Parse the response as JSON
+  .then((data) => {
+    console.log("Fetched data:", data); // Log the fetched data
   })
-  .catch(error => {
-    console.error('Error fetching data:', error); // Handle any errors that occur during the fetch
+  .catch((error) => {
+    console.error("Error fetching data:", error); // Handle any errors that occur during the fetch
   });
 ```
 
@@ -144,91 +147,106 @@ Learn more about open APIs by [watching this video](https://www.youtube.com/watc
 # AJAX - Asynchronous JavaScript and XML
 
 ## A typical AJAX application
+
 Because the Ajax application dynamically modifies Web pages without the user having to navigate from one page to another, the operation of the Web application can be made to resemble that of standard desktop programs, such as Google Docs. Facebook is also a good example of an AJAX app.
 
 ### A = Asynchronous
+
 Because the execution environment of JavaScript is single-threaded, time-consuming operations cannot be waited synchronously, i.e., so that a single thread waits for the execution of the call, in which case the program does nothing else.
 For this reason, in JavaScript, many things, such as AJAX calls and file processing, are done asynchronously.
 
 #### Asynchronous AJAX-request
+
 ```javascript
-    'use strict';
-    console.log('the script starts');
+"use strict";
+console.log("the script starts");
 
-    function synchronousFunction() {
-      let number = 1;
-      for(let i = 1; i < 100000; i++){
-        number += i;
-        console.log('synchronousFunction running');
-      }
-      console.log('regular function complete', number);
-    }
+function synchronousFunction() {
+  let number = 1;
+  for (let i = 1; i < 100000; i++) {
+    number += i;
+    console.log("synchronousFunction running");
+  }
+  console.log("regular function complete", number);
+}
 
-    async function asynchronousFunction() {                 // asynchronous function is defined by the async keyword
-        console.log('asynchronous download begins');
-        try {                                               // error handling: try/catch/finally
-            const response = await fetch('http://127.0.0.1:3000/airport/00A');    // starting data download, fetch returns a promise which contains an object of type 'response'
-            const jsonData = await response.json();          // retrieving the data retrieved from the response object using the json() function
-            console.log(jsonData.ICAO, jsonData.Name);    // log the result to the console
-        } catch (error) {
-            console.log(error.message);
-        } finally {                                         // finally = this is executed anyway, whether the execution was successful or not
-            console.log('asynchronous load complete');
-        }
-    }
+async function asynchronousFunction() {
+  // asynchronous function is defined by the async keyword
+  console.log("asynchronous download begins");
+  try {
+    // error handling: try/catch/finally
+    const response = await fetch("http://127.0.0.1:3000/airport/00A"); // starting data download, fetch returns a promise which contains an object of type 'response'
+    const jsonData = await response.json(); // retrieving the data retrieved from the response object using the json() function
+    console.log(jsonData.ICAO, jsonData.Name); // log the result to the console
+  } catch (error) {
+    console.log(error.message);
+  } finally {
+    // finally = this is executed anyway, whether the execution was successful or not
+    console.log("asynchronous load complete");
+  }
+}
 
-    synchronousFunction();
-    asynchronousFunction();
+synchronousFunction();
+asynchronousFunction();
 
-    console.log('the script ends');
+console.log("the script ends");
 ```
+
 ##### Task: Try the script above. Use the URL of assignment 2 of Python module 13 ([Finnish](https://github.com/vesavvo/Python_Ohjelmistoteema/blob/main/Teht%C3%A4v%C3%A4t.md#13-taustapalvelun-ja-rajapinnan-rakentaminen) or [English](https://github.com/vesavvo/Python_Ohjelmistoteema/blob/main/English/Exercises.md#13-setting-up-a-backend-service-with-an-interface)).
-   - First install Flask-CORS extension to your Python app. 
-   - Example: https://gist.github.com/ilkkamtk/26ba4289a3b1bb26b3ff002570c79ec5
-   - The code above should log to the console:
-   ```text
-    the script starts
-    regular function complete 49999999990067860000
-    asynchronous download begins
-    the script ends
-    00A Total Rf Heliport
-    asynchronous download complete
-   ```
-   - Also look at the Network tab in the developer tools and reload the page. You will notice that the loading of URL will not begin until the standard function has finished executing.
+
+- First install Flask-CORS extension to your Python app.
+- Example: https://gist.github.com/ilkkamtk/26ba4289a3b1bb26b3ff002570c79ec5
+- The code above should log to the console:
+
+```text
+ the script starts
+ regular function complete 49999999990067860000
+ asynchronous download begins
+ the script ends
+ 00A Total Rf Heliport
+ asynchronous download complete
+```
+
+- Also look at the Network tab in the developer tools and reload the page. You will notice that the loading of URL will not begin until the standard function has finished executing.
 
 #### Here is the same example, but this time the airport code is entered by using a form.
+
 ```html
 <form id="airport-form">
-    <input name="icao" type="text" placeholder="Enter airport icao code">
-    <input name="submit" type="submit" value="Send">
+  <input name="icao" type="text" placeholder="Enter airport icao code" />
+  <input name="submit" type="submit" value="Send" />
 </form>
 
 <script>
-'use strict';
+  "use strict";
 
-// When the form is submitted...
-const airportForm = document.querySelector('#airport-form')
-airportForm.addEventListener('submit', async function(evt) {
+  // When the form is submitted...
+  const airportForm = document.querySelector("#airport-form");
+  airportForm.addEventListener("submit", async function (evt) {
     // ... prevent the default action.
     evt.preventDefault();
     // get value of input element
-    const code = document.querySelector('input[name=icao]').value;
-    try {                                               // error handling: try/catch/finally
-        const response = await fetch(`http://127.0.0.1:3000/airport/${code}`);    // starting data download, fetch returns a promise which contains an object of type 'response'
-        const jsonData = await response.json();          // retrieving the data retrieved from the response object using the json() function
-        console.log(jsonData.ICAO, jsonData.Name);    // log the result to the console
+    const code = document.querySelector("input[name=icao]").value;
+    try {
+      // error handling: try/catch/finally
+      const response = await fetch(`http://127.0.0.1:3000/airport/${code}`); // starting data download, fetch returns a promise which contains an object of type 'response'
+      const jsonData = await response.json(); // retrieving the data retrieved from the response object using the json() function
+      console.log(jsonData.ICAO, jsonData.Name); // log the result to the console
     } catch (error) {
-        console.log(error.message);
+      console.log(error.message);
     }
-});
+  });
 </script>
 ```
 
 ## J = JavaScript
+
 In AJAX, JavaScript is used to display downloaded data in an HTML document.
 
 ## X = XML, eXtensible Markup Language
+
 XML is a markup language, like HTML. It is intended for storing and transferring data. A typical XML document looks like this:
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <images>
@@ -244,10 +262,12 @@ XML is a markup language, like HTML. It is intended for storing and transferring
     </picture>
 </images>
 ```
+
 Around the mid-2000s, when AJAX functionality was added to JavaScript, XML was a natural alternative to use for data transfer.
 Creating XML documents on a server, and especially reading / parsing them on the client end with JavaScript, is reasonably cumbersome compared to current technologies.
 
 ## [JSON](http://json.org), JavaScript Object Notation
+
 JSON, or JavaScript Object Notation, is a popular markup language commonly used for communication between browsers and servers, and especially in Ajax applications. Today, Ajax applications mostly use JSON instead of XML. Although JSON uses JavaScript data structures to represent data, it is still compatible with other languages. Using JSON in both server and browser programming is usually much simpler than XML. E.g:
 
 ```json
@@ -264,111 +284,127 @@ JSON, or JavaScript Object Notation, is a popular markup language commonly used 
   }
 ]
 ```
+
 The example above describes an array (square brackets []) that contains two objects (braces {}). In this example, the data of the second picture is retrieved and displayed in an HTML document:
+
 ```html
 <figure>
-    <img>
-    <figcaption></figcaption>
+  <img />
+  <figcaption></figcaption>
 </figure>
 
 <script>
-        // simplified example without error handling
-        async function showPics() {
-            const response = await fetch('pics.json');              // starts the download.
-            const images = await response.json();                     // convert the loaded text JSON into a JavaScript object / array
-            
-            const name = images[1].name;     // the 'name' property of the second object in the 'images' array
-            const description = images[1].description; // 'description' property of the second object object in the 'images' array
-            const address = images[1].address; // 'address' property of the second object object in the 'images' array
-    
-            document.querySelector('img').src = address;
-            document.querySelector('img').alt = name;
-            document.querySelector('figcaption').innerText = description;
-            
-        }
+  // simplified example without error handling
+  async function showPics() {
+    const response = await fetch("pics.json"); // starts the download.
+    const images = await response.json(); // convert the loaded text JSON into a JavaScript object / array
 
-        showPics(); // call function to start download
+    const name = images[1].name; // the 'name' property of the second object in the 'images' array
+    const description = images[1].description; // 'description' property of the second object object in the 'images' array
+    const address = images[1].address; // 'address' property of the second object object in the 'images' array
+
+    document.querySelector("img").src = address;
+    document.querySelector("img").alt = name;
+    document.querySelector("figcaption").innerText = description;
+  }
+
+  showPics(); // call function to start download
 </script>
 ```
 
-
 ## [promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+
 A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it's not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending.
 ![Promise flowchart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/promises.png)
 
 In newer versions of JavaScript, promise is increasingly used instead of [callback functions](extras.md#callback-functions-and-callback-hell). A promise is an object that ‘promises’ to return value.
 The advantages of the promise are e.g. simpler syntax and easier error handling. For example, to submit a form using the fetch method:
+
 ```html
 <form>
   <div>
-    <input name="fName" type="text" placeholder="first name">
+    <input name="fName" type="text" placeholder="first name" />
   </div>
   <div>
-    <input name="lName" type="text" placeholder="last name">
+    <input name="lName" type="text" placeholder="last name" />
   </div>
   <div>
-    <input name="submit" type="submit" value="Send">
+    <input name="submit" type="submit" value="Send" />
   </div>
 </form>
 <script>
-// When the form is submitted...
-document.addEventListener('submit', async function(evt) {
+  // When the form is submitted...
+  document.addEventListener("submit", async function (evt) {
     // ... prevent the default action.
     evt.preventDefault();
     // create an object 'data' to which user input from the form is added and the http method is set to POST
     const data = {
-        body: JSON.stringify({
-            fname: document.querySelector('input[name=fName]').value,
-            lname: document.querySelector('input[name=lName]').value
-        }),
-        method: 'POST',
-        headers: {
-              'Content-type': 'application/json',
-        },
-    }
+      body: JSON.stringify({
+        fname: document.querySelector("input[name=fName]").value,
+        lname: document.querySelector("input[name=lName]").value,
+      }),
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+    };
     // send the data
-   try {
-      const response = await fetch('/someAddressWhereDataIsSent', data);  // Send data to server and receive a server response
-      if (!response.ok) throw new Error('Invalid input!');         // If an error occurs, an error message is thrown
-      const json = await response.json();                                 // convert the loaded text JSON to a JavaScript object / array
-      console.log('result', json);                                        // print the result to the console
-   } catch (e) {
-      console.log('error', e);
-   }
-});
+    try {
+      const response = await fetch("/someAddressWhereDataIsSent", data); // Send data to server and receive a server response
+      if (!response.ok) throw new Error("Invalid input!"); // If an error occurs, an error message is thrown
+      const json = await response.json(); // convert the loaded text JSON to a JavaScript object / array
+      console.log("result", json); // print the result to the console
+    } catch (e) {
+      console.log("error", e);
+    }
+  });
 </script>
 ```
+
 `fetch()` and `json()` functions both return a promise. Hence, you need use the await keyword to wait for the promise to be fulfilled. In this case that means that the data has been loaded.
 
-
 ## [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-Fetch is a promise-based way to make Ajax applications. Compared to the original [XMLHTTPRequest object](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), Fetch is more powerful, more flexible, and simpler in larger applications because it does not have to deal with so-called callback hell and handling errors is easier. 
+
+Fetch is a promise-based way to make Ajax applications. Compared to the original [XMLHTTPRequest object](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), Fetch is more powerful, more flexible, and simpler in larger applications because it does not have to deal with so-called callback hell and handling errors is easier.
 
 The ES8 version of JavaScript introduced the syntax of [async / await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function) to simplify the use of promises and especially error handling. With Async / await syntax, functions that return a promise are handled in much the same way as any other function. The difference is that the function that returns the promise must be written inside another asynchronous (async) function. In addition, await is written in front of the function call. Here's the above example using async / await syntax, but now with [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) error handling.
+
 ```html
 <figure>
-    <img>
-    <figcaption></figcaption>
+  <img />
+  <figcaption></figcaption>
 </figure>
 
-<script>   
-    async function showPics() {  
-        try{
-           const response = await fetch('pics.json');              // The download is started.
-           if (!response.ok) throw new Error('Invalid input!'); // If an error occurs, an error message is thrown
-           const images = await response.json();                     // convert the loaded text JSON to a JavaScript object / array
-           const name = images[1].name;     // the 'name' property of the second object in the 'images' array
-           const description = images[1].description; // 'description' property of the second object object in the 'images' array
-           const address = images[1].address; // 'address' property of the second object object in the 'images' array
+<script>
+  async function showPics() {
+    try {
+      const response = await fetch("pics.json"); // The download is started.
+      if (!response.ok) throw new Error("Invalid input!"); // If an error occurs, an error message is thrown
+      const images = await response.json(); // convert the loaded text JSON to a JavaScript object / array
+      const name = images[1].name; // the 'name' property of the second object in the 'images' array
+      const description = images[1].description; // 'description' property of the second object object in the 'images' array
+      const address = images[1].address; // 'address' property of the second object object in the 'images' array
 
-           document.querySelector('img').src = address;
-           document.querySelector('img').alt = name;
-           document.querySelector('figcaption').innerText = description;
-        } catch (error) {                                          // catch the thrown error message
-          console.log(error.message)
-        }                  
-     }
+      document.querySelector("img").src = address;
+      document.querySelector("img").alt = name;
+      document.querySelector("figcaption").innerText = description;
+    } catch (error) {
+      // catch the thrown error message
+      console.log(error.message);
+    }
+  }
 
-    showPics();
+  showPics();
 </script>
 ```
+
+---
+
+<!-- add mermaid support for gh pages -->
+<script type="module">
+    Array.from(document.getElementsByClassName("language-mermaid")).forEach(element => {
+      element.classList.add("mermaid");
+    });
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+</script>

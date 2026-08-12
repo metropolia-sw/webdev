@@ -1,6 +1,6 @@
-# Assignment 1: HTML + CSS Company website 
+# Assignment 1: HTML + CSS Company website
 
-**Make your version of [the provided layout](assets/assignment-1-layout.pdf). Note: multiple pages!**
+**Make your version of [the provided layout](../assets/assignment-1-layout.pdf). Note: multiple pages!**
 
 - In the provided layout you'll find the plans for three pages: Home, Products and Contact.
 - Your task is to make a simple website using the provided layout.
@@ -29,14 +29,14 @@ On submission, you will automatically receive grade 5. If some aspects of the as
 - Navigation does not work -1 to -3
 - Images are not found -1 to -3
 - Contrast check is not passed -1
-   - _UPDATE_: https://color.a11y.com/Contrast/ is no longer available. Use https://wave.webaim.org/ instead. [Example screenshot here](assets/wave.png).
-   - Contrast errors needs to be 0. Other items are checked with validation and Lighthouse below. 
+  - _UPDATE_: https://color.a11y.com/Contrast/ is no longer available. Use https://wave.webaim.org/ instead. [Example screenshot here](../assets/wave.png).
+  - Contrast errors needs to be 0. Other items are checked with validation and Lighthouse below.
 - Validation is not passed -3
-   - No errors
-   - Warnings, like no heading in `<article>` or `<section>` etc. are allowed
+  - No errors
+  - Warnings, like no heading in `<article>` or `<section>` etc. are allowed
 - Lighthouse check score is less than 90 -1, less than 70 -2
   - some versions of Chrome show the score with 5/5 or 4/4 in that case -1 from each missing point. E.g. 3/4 = -1. However, max deduction is -2
-  - Update: If you use `<iframe>` to add Google map, Lighthouse will deduct points. That will not affect evaluation. you should however consider just using an image of the map. 
+  - Update: If you use `<iframe>` to add Google map, Lighthouse will deduct points. That will not affect evaluation. you should however consider just using an image of the map.
 - Default font (Times New Roman) -1
 - Missing padding (text too close to edges or other elements) -1 to -3
 
@@ -47,14 +47,19 @@ Screenshot page example html:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Results</title>
-</head>
-<body>
-<h2>Font</h2>
-<p>Font is from <a href="https://fonts.google.com/specimen/Whatever">Google Fonts. Name: Whatever</a></p>
-<pre>
+  </head>
+  <body>
+    <h2>Font</h2>
+    <p>
+      Font is from
+      <a href="https://fonts.google.com/specimen/Whatever"
+        >Google Fonts. Name: Whatever</a
+      >
+    </p>
+    <pre>
     @font-face {
       font-family: whatEver;
       src: url(sansation_light.woff) format(woff);
@@ -63,20 +68,20 @@ Screenshot page example html:
     body {
        font-family: whatEver;
     }
-</pre>
-<h2>Validation</h2>
-<p>
-    <img src="img/validator.png" alt="valid">
-</p>
-<h2>Lighthouse</h2>
-<p>
-    <img src="img/lighthouse.png" alt="lighthouse">
-</p>
-<h2>Contrast</h2>
-<p>
-    <img src="img/contrast.png" alt="contrast">
-</p>
-
-</body>
+</pre
+    >
+    <h2>Validation</h2>
+    <p>
+      <img src="img/validator.png" alt="valid" />
+    </p>
+    <h2>Lighthouse</h2>
+    <p>
+      <img src="img/lighthouse.png" alt="lighthouse" />
+    </p>
+    <h2>Contrast</h2>
+    <p>
+      <img src="img/contrast.png" alt="contrast" />
+    </p>
+  </body>
 </html>
 ```
