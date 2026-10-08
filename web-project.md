@@ -1,4 +1,4 @@
-# Programming Project 1: Game-Themed Web Application
+# Programming Project 2: Game-Themed Web Application
 
 ## Objective
 

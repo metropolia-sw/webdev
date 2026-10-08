@@ -1,3 +1,7 @@
+# Extra material
+
+Some voluntary extra reading and tips.
+
 ## Recursion
 
 Recursion refers to a situation where a function calls itself, as a result of which the called function calls itself again, and so on. At some point, the deepening of the call stack ends and the recursion begins to unravel.
@@ -26,6 +30,7 @@ Although a recursive function seems inventive, it is often not the most efficien
 # BOM
 
 ## Timing of functions
+
 ### [setTimeout](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout)
 The `setTimeout ()` function can be used to call a function once after a certain time.
 ```javascript
@@ -38,6 +43,7 @@ setTimeout(printSomething, 2000, 'This will be printed');
 * the above code creates a function `printSomething` that is run using the` setTimeout () `method after two seconds. The time is given in milliseconds.
 
 ### [setInterval](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval)
+
 The `setInterval()` function can be used to call a function at specified intervals. The `setInterval()` function returns the `interval ID`, which allows the interval to be stopped later by calling the `clearInterval ()` function
 ```javascript
 function sayHello() {
@@ -54,6 +60,7 @@ clearInterval(interval);
 # DOM
 
 ### Object collections
+
 You can also select element collections from a document:
 ```javascript
 document.forms // retrieves all form elements
@@ -63,6 +70,7 @@ document.scripts // retrieves all script elements
 ```
 
 ### Sanitize innerHTML (extra)
+
 `innerHTML` property could be used for Cross Site Scripting attacks. [Here is an article on how to prevent it.](https://gomakethings.com/how-to-sanitize-third-party-content-with-vanilla-js-to-prevent-cross-site-scripting-xss-attacks/)
 
 # Events
@@ -78,8 +86,11 @@ function clickHandler() {
 }
 document.addEventListener('click', clickHandler);
 ```
+
 #### Callback hell
+
 Callback Hell is essentially nested callbacks stacked below one another forming a pyramid structure. Every callback depends/waits for the previous callback, thereby making a pyramid structure that affects the readability and maintainability of the code.
+
 ```javascript
 getData(function(a) {
   getMoreData(a, function(b) {
@@ -93,7 +104,9 @@ getData(function(a) {
   })
 })
 ```
+
 Refactoring the functions to return promises and using async/await can sometimes be a solution.
+
 ```javascript
 async function asyncAwaitVersion() {
   const a = await getData()
@@ -105,28 +118,6 @@ async function asyncAwaitVersion() {
 }
 ```
 
-# HTTP-protocol
-Most of the open APIs are implemented with the REST architecture model based on the HTTP protocol, which is why they are often referred to as RESTful web services.
-The REST architecture uses HTTP methods to tell the system whether you want to read, add, or edit data, for example. In order to use open interfaces / RESTful services, it is good to know the basics of the HTTP protocol:
-
-[Overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
-
-### HTTP methods
-HTTP defines query methods that tell the server what kind of function it wants to perform.
-The most commonly used methods are:
-
-* GET
-    * is usually used to request a specific resource or data
-* POST
-    * used to add data or even a file
-* PUT
-    * used to replace an old record with a new one
-* DELETE
-    * used to delete a record
-* PATCH
-    * used to update part of the record data
-
-The documentation of the used API explains which method and which parameters and HTTP headers should be used in different situations.
-
 # Fixing CORS errors
+
 [In this link](https://github.com/ilkkamtk/corsfix)

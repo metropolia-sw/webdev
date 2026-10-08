@@ -22,7 +22,7 @@
 
 ## Web application development project
 
-- [Instructions, requirements and evaluation](web-project.md)
+- [Project instructions, requirements and evaluation](web-project.md)
 - [Using Git in team work](using-git-in-teams.md)
 - [Publishing Flask application on the Web](flask-deployment.md)
 
