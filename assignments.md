@@ -6,8 +6,8 @@ Create a folder for each module and inside each module create folder for each as
 
 Add links that point to the module folder in users.metropolia.fi (not individual files) to the `README.md` file in your GitHub repo of your JavaScript assignments.
 
+- [Deploying your website using Metropolia Home pages for students](https://metropolia-sw.github.io/webdev/04-website-deployment.html)
 - [YouTube instructions for uploading](https://www.youtube.com/watch?v=CDXEu4piXRA&list=PLKenVLUxjmH-y89AiiI2xcXDy5QG83D4K&index=8)
-- [webdisk.metropolia.fi](https://webdisk.metropolia.fi/) can also be used to upload assignments
 
 ## Example submission
 
@@ -51,7 +51,7 @@ Submit the link to Oma assignment as instructed.
 
 ## Read this before continuing
 
-You can choose which assignments you want to do based on your skill level. Just make sure you complete enough assignments to meet the requirements (40% of the total points). The more points available in the assignment, the more challenging it is.
+You can choose which assignments you want to do based on your skill level. Just make sure you complete enough assignments to meet the requirements (minimum 10 points/module). The more points available in the assignment, the more challenging it is.
 
 ---
 
@@ -251,9 +251,9 @@ You can choose which assignments you want to do based on your skill level. Just 
 
 ## Python Flask server
 
-1. Implement a Flask backend service that tells whether a number received as a parameter is a prime number or not. Use the prior prime number exercise as a starting point. For example, a GET request for number 31 is given as: `http://127.0.0.1:3000/prime_number/31`. The response must be in the format of `{"Number": 31, "isPrime": true}`. (**2 p**)
+1. Implement a Flask backend service that tells whether a number received as a parameter is a prime number or not. Use the prior prime number exercise as a starting point. For example, a GET request for number 31 is given as: `http://127.0.0.1:3000/prime_number/31`. The response must be in the format of `{"Number": 31, "isPrime": true}`. (**4 p**)
 
-2. Implement a Flask backend service that receives an English word as a parameter and returns its Finnish translation in JSON format. The English–Finnish dictionary is stored in a separate JSON file on disk. (**8 p**)
+2. Implement a Flask backend service that receives an English word as a parameter and returns its Finnish translation in JSON format. The English–Finnish dictionary is stored in a separate JSON file on disk. (**10 p**)
 
    - For example, a GET request for "hello": `http://127.0.0.1:3000/translate/hello` should return:
 
@@ -285,6 +285,10 @@ You can choose which assignments you want to do based on your skill level. Just 
    ```
 
    - Optional: Implement `/words` endpoint which returns a JSON list of all available _English_ words.
+
+3. Implement a Flask backend service that adds new words to the dictionary. (**6 p**)
+   - en-fi word pairs are sent to the server in the same HTTP request (POST would be the correct method for doing this but using GET is ok for this assignment), for example: `GET http://127.0.0.1:3000/add?en=book&fi=kirja`
+   - New words are stored (append) on the disk in `dictionary.json` file
 
 ---
 

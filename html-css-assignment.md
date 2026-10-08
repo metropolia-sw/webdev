@@ -23,22 +23,22 @@ In Oma, provide a `clickable` link to the folder where your assignment is. Also 
 
 ### Evaluation
 
-On submission, you will automatically receive grade 5. If some aspects of the assignment are missing or inadequate, grade will be deducted as follows:
+Evaluation will be done on scale **pass/fail**. The assignment is considered passed if the following requirements are mostly met:
 
-- Your version does not resemble the provided layout, or CSS is missing -1 to -3
-- Navigation does not work -1 to -3
-- Images are not found -1 to -3
-- Contrast check is not passed -1
+- Your version resembles the provided layout.
+- CSS is in use
+- Navigation works
+- Images are visible on page
+- Contrast check is passed 
    - _UPDATE_: https://color.a11y.com/Contrast/ is no longer available. Use https://wave.webaim.org/ instead. [Example screenshot here](assets/wave.png).
    - Contrast errors needs to be 0. Other items are checked with validation and Lighthouse below. 
-- Validation is not passed -3
+- Validation is passed
    - No errors
    - Warnings, like no heading in `<article>` or `<section>` etc. are allowed
-- Lighthouse check score is less than 90 -1, less than 70 -2
-  - some versions of Chrome show the score with 5/5 or 4/4 in that case -1 from each missing point. E.g. 3/4 = -1. However, max deduction is -2
+- Lighthouse check score must be at least 90 or 3/4 or 4/5 depending on the Browser
   - Update: If you use `<iframe>` to add Google map, Lighthouse will deduct points. That will not affect evaluation. you should however consider just using an image of the map. 
-- Default font (Times New Roman) -1
-- Missing padding (text too close to edges or other elements) -1 to -3
+- Do not use the default font (Times New Roman)
+- Enough padding is used (text not too close to edges or other elements)
 
 **Note! Test your assignment on a different computer to make sure all files are loaded!**
 
