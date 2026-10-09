@@ -1,4 +1,4 @@
-# Deploying a Flask based web application on the Web 
+# Deploying a Flask based web application on the Web
 
 ## Publish a Flask Application on Render
 
@@ -106,7 +106,7 @@ Note: if you sign up with your GitHub account, Render will ask for permission to
 
 In the Render Dashboard:
 
-1. Choose  _New Web Service_
+1. Choose _New Web Service_
 1. Connect your GitHub repository
 1. Check the settings
    - use free compute option

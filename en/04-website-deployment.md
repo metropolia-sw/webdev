@@ -4,13 +4,12 @@
 
 You can publish your website on Metropolia’s server using the users.metropolia.fi service as follows:
 
-1. Upload your website files (all html, css and image files, etc.) to a directory named `public_html` located in your home directory (NOTE: do not delete that folder in any case). 
+1. Upload your website files (all html, css and image files, etc.) to a directory named `public_html` located in your home directory (NOTE: do not delete that folder in any case).
    - You can access your home directory by logging into the server `shell.metropolia.fi` for example via SSH. For file transfer, you can use scp or sftp programs (you need to create an SSH key pair first, check links below).
    - Another (and easier for beginners) option is to use <https://webdisk.metropolia.fi/> website
 
 2. Your published website can be found at: <https://users.metropolia.fi/~yourusername>, where `yourusername` is replaced with you Metropolia username.
    - For example, if your username is "janedoe", your site address is: <https://users.metropolia.fi/~janedoe>
-
 
 More information is available in Metropolia Helpdesk's wiki:
 

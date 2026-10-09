@@ -59,7 +59,6 @@ graph LR
 
 **Read & study**: [How browsers load websites](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_browsers_load_websites).
 
-
 ---
 
 ### Hypertext Transfer Protocol (HTTP)
@@ -94,11 +93,10 @@ Content-Type: application/json
 Request methods are used to indicate the desired action to be performed on the identified resource. The most common HTTP methods are:
 
 - **GET**: Retrieve data from the server (e.g. html files, css files, javascript files, image files, etc.).
-    - This is the method we are mostly using when we access web pages. 
+  - This is the method we are mostly using when we access web pages.
 - **POST**: Send data to the server to create a new resource (e.g., submitting a form).
 - **PUT**: Update an existing resource on the server.
 - **DELETE**: Remove a resource from the server.
-
 
 #### HTTP response example
 
@@ -178,7 +176,7 @@ This is just a very brief introduction to HTML. It's covered in more detail in t
 - The `<head>` element gathers elements that provide information about the document.
 - The `<body>` element contains the actual content of the document.
 
-Browser generates a DOM (Document Object Model) tree based on the HTML document. The DOM is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content dynamically. The DOM is an object-oriented representation of the web page, which can be modified with a scripting language such as JavaScript. 
+Browser generates a DOM (Document Object Model) tree based on the HTML document. The DOM is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content dynamically. The DOM is an object-oriented representation of the web page, which can be modified with a scripting language such as JavaScript.
 
 For example, the above HTML document would generate the following DOM tree:
 
@@ -205,7 +203,7 @@ We will study the DOM in more detail in the next weeks when we learn JavaScript.
 - When you move the mouse over a link, the mouse arrow will turn into a little hand.
 - Links are defined with the `<a>` tag.
 - The `href` attribute specifies the URL of the page the link goes to.
-- The content of the link element is "Visit W3Schools.com!" which is what the user sees and clicks on. 
+- The content of the link element is "Visit W3Schools.com!" which is what the user sees and clicks on.
 
 ```html
 <a href="https://www.w3schools.com">Visit W3Schools.com!</a>
@@ -215,17 +213,17 @@ We will study the DOM in more detail in the next weeks when we learn JavaScript.
 
 - Some elements are not supposed to have any content. They are called ‘empty’ elements.
 - For example `<img>` element for displaying images contains two attributes but no content and no closing tag (`</img>`)
-    - The `<img>` tag is used to embed an image in an HTML page.
-    - Images are not technically inserted into a web page; images are linked to web pages. The `<img>` tag creates a holding space for the referenced image.
-    - The `<img>` tag has two required attributes: `src` and `alt`.
-    - The `src` attribute specifies the path to the image.
-    - The `alt` attribute specifies an alternate text for the image, if the image for some reason cannot be displayed.
-    - `<img>`is an empty element, which means that it contains attributes only and has no closing tag.
-    - Example:
+  - The `<img>` tag is used to embed an image in an HTML page.
+  - Images are not technically inserted into a web page; images are linked to web pages. The `<img>` tag creates a holding space for the referenced image.
+  - The `<img>` tag has two required attributes: `src` and `alt`.
+  - The `src` attribute specifies the path to the image.
+  - The `alt` attribute specifies an alternate text for the image, if the image for some reason cannot be displayed.
+  - `<img>`is an empty element, which means that it contains attributes only and has no closing tag.
+  - Example:
 
-        ```html
-        <img src="picture.jpg" alt="Mountain" />
-        ```
+    ```html
+    <img src="picture.jpg" alt="Mountain" />
+    ```
 
 #### Special Characters
 
@@ -238,7 +236,6 @@ We will study the DOM in more detail in the next weeks when we learn JavaScript.
 - Metadata is data about the HTML document. Metadata is not displayed.
 - Metadata is used by browsers (how to display content), search engines (keywords), and other web services.
 - You can use the `<meta>` tag to specify metadata.
-
   - For example Facebook uses the `<meta>` tag to specify the title, description, and image for a page:
 
   ```html
@@ -374,7 +371,6 @@ This is just a very brief introduction to CSS. It's covered in more detail in th
 - Style refers to the look of a certain element.
 - Sheets refer to a set of rules to determine how the webpage will look.
 
-
 #### Inserting CSS into HTML
 
 - **External style sheet**: Styles are specified in an external CSS file. This is the most common practice. You can define the look of an entire website with a single CSS file. Insert into the `<head>` part of the HTML document: `<link rel="stylesheet" type="text/css" href="mystyle.css">`.
@@ -461,11 +457,11 @@ This is just a very brief introduction to CSS. It's covered in more detail in th
     background-color: yellow;
   }
   /* Selects all elements with a target="_blank" attribute */
-  [target='_blank'] {
+  [target="_blank"] {
     background-color: yellow;
   }
   /* Selects all elements with a target attribute value containing "w3schools" */
-  [target*='w3schools'] {
+  [target*="w3schools"] {
     background-color: yellow;
   }
   ```

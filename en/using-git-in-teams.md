@@ -93,6 +93,7 @@ There is also a command `git rebase` to integrate changes but we will not cover 
    - The `=======` marker separates your changes from the changes in the other branch.
    - The `>>>>>>> branch-name` marker indicates the end of their changes.
    - Many editors and IDEs provide tools for doing this more easily
+
 3. Resolve the conflict by editing the conflicting file:
    - Review the file and choose which changes/lines to keep and/or how to combine them.
    - Use editor's conflict resolution tools if available.
@@ -246,7 +247,7 @@ Each team member should be able to work on their own branch, make changes, and t
 3. Each team member should create a new branch for their work using `git branch <branch-name>` and switch to it using `git checkout <branch-name>` (or use VSCode git tools).
 4. Each team member should test making changes and adding files to the project in their branch, committing them, and pushing their own branch to Github.
 5. With the team, try merging all the changes created by individual team members to the same main branch in Github together.
-    - This needs some coordination and communication between team members to avoid/merge conflicts and ensure that everyone is aware of the changes being made.
+   - This needs some coordination and communication between team members to avoid/merge conflicts and ensure that everyone is aware of the changes being made.
 6. Each team member should pull the latest changes from the main branch to their local branch and have the same codebase in their local machine as the main branch in Github.
 
 After this exercise each team member should be able to push their changes to the remote repository and sync with the latest changes from other team members. Team should have a common understanding or agreement on how to work with Git in a team environment, including branching strategies, commit messages, and conflict resolution.
@@ -262,9 +263,6 @@ Submit your team's Github link to Oma assignment as instructed.
 - When creating new commits, it is important to write clear and descriptive commit messages. This will make it easier to understand the changes that were made, and why they were made.
 - Use `git log` to view the commit history and understand the changes that have been made to the repository.
 - Use `git diff` to see the differences between your working directory and the staging area, or between different commits.
-
-
-
 
 ---
 

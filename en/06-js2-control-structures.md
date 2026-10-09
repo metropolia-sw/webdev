@@ -7,9 +7,9 @@ Conditional expression can be used to create alternative execution paths in a pr
 In JavaScript, a Conditional expression is implemented with an if clause. For example, the following program will ask the user for age and indicate if the user is a minor based on the input:
 
 ```javascript
-const age = prompt('Enter your age.');
+const age = prompt("Enter your age.");
 if (age < 18) {
-    console.log('You are a minor.');
+  console.log("You are a minor.");
 }
 ```
 
@@ -39,7 +39,7 @@ If the condition is false, the conditional part is not executed. For example, wi
 
 Comparison operators are usually needed to express a condition in a conditional statement. The following comparison operators are used in JavaScript:
 
-- equal to (`==`) or (`===`) 
+- equal to (`==`) or (`===`)
 - different than (`!=`) or (`!==`)
 - greater than (`>`)
 - greater than or equal to (`>=`)
@@ -51,8 +51,8 @@ Comparison operators are usually needed to express a condition in a conditional 
 Note the difference between the assignment operator (=) and the equality comparison operator (==). The following example is invalid code:
 
 ```javascript
-if (first = second) {
-    console.log('Same values.')
+if ((first = second)) {
+  console.log("Same values.");
 }
 ```
 
@@ -69,9 +69,9 @@ Logical expressions can be combined using logical operators.
 For example, the following program indicates if the integer entered by the user is both even and greater than 10:
 
 ```javascript
-const number = prompt('Enter an integer');
+const number = prompt("Enter an integer");
 if (number % 2 === 0 && number > 10) {
-    console.log('You entered an even number greater than 10');
+  console.log("You entered an even number greater than 10");
 }
 ```
 
@@ -84,12 +84,11 @@ The two alternative blocks are mutually exclusive; either is always performed.
 The following example indicates whether the integer entered by the user is even or odd:
 
 ```javascript
-const number = prompt('Enter an integer');
+const number = prompt("Enter an integer");
 if (number % 2 === 0) {
-    console.log('You entered an even number');
-}
-else {
-    console.log('You entered an odd number.');
+  console.log("You entered an even number");
+} else {
+  console.log("You entered an odd number.");
 }
 ```
 
@@ -109,13 +108,13 @@ graph TD
 The required number of `else if` branches is appended to the conditional structure of many mutually exclusive options. During execution, the original `if` branch is moved - or if its condition is false - the first `else-if` branch whose selection condition is met. The following program comments the age of an adult user:
 
 ```javascript
-const age = prompt('Enter your age');
+const age = prompt("Enter your age");
 if (age >= 65) {
-    console.log('You are of retirement age');
-} else if (age>=30) {
-    console.log('You are middle aged.');
-} else if (age>=18) {
-    console.log('You are a young adult');
+  console.log("You are of retirement age");
+} else if (age >= 30) {
+  console.log("You are middle aged.");
+} else if (age >= 18) {
+  console.log("You are a young adult");
 }
 ```
 
@@ -142,15 +141,13 @@ There is no `else` branch in the program; if the user enters the age of 17 years
 If you always want to end up with an outcome, write the last branch as the `else` branch. The following program indicates whether the number entered by the user is positive, negative, or zero:
 
 ```javascript
-const number = prompt('Enter a number');
+const number = prompt("Enter a number");
 if (number > 0) {
-    console.log('The number is positive.');
-}
-else if (number < 0) {
-    console.log('The number is negative.');
-}
-else {
-    console.log('That number is zero.');
+  console.log("The number is positive.");
+} else if (number < 0) {
+  console.log("The number is negative.");
+} else {
+  console.log("That number is zero.");
 }
 ```
 
@@ -170,21 +167,19 @@ The drug dose determination can be written as a JavaScript program as follows:
 
 ```javascript
 let age, weight, dose; // let is used because the variables are given values later
-age = prompt('Enter age of the patient.');
+age = prompt("Enter age of the patient.");
 if (age >= 12) {
+  dose = 500;
+} else if (age >= 2) {
+  weight = prompt("Enter the weight of the patient.");
+  dose = weight * 12.5;
+  if (dose > 500) {
     dose = 500;
+  }
+} else {
+  dose = 0;
 }
-else if (age >= 2) {
-    weight = prompt('Enter the weight of the patient.');
-    dose = weight * 12.5;
-    if (dose > 500) {
-        dose = 500;
-    }
-}
-else {
-    dose = 0;
-}
-console.log('The dose is ' + dose + ' micrograms.');
+console.log("The dose is " + dose + " micrograms.");
 ```
 
 Notice the new `if` statement inside the `else-if` branch, which will only be executed if that branch is reached.
@@ -198,17 +193,17 @@ For example, the following program asks the user for a ship's cabin class (A, B,
 ```javascript
 const cabinClass = prompt("Enter the cabin class (A/B/C).");
 switch (cabinClass) {
-    case 'A':
-        console.log('Top deck cabin with window.');
-        break;
-    case 'B':
-        console.log('Top deck cabin without window.');
-        break;
-    case 'C':
-        console.log('Windowless cabin under the car deck.');
-        break;
-    default:
-        console.log("Invalid cabin class.");
+  case "A":
+    console.log("Top deck cabin with window.");
+    break;
+  case "B":
+    console.log("Top deck cabin without window.");
+    break;
+  case "C":
+    console.log("Windowless cabin under the car deck.");
+    break;
+  default:
+    console.log("Invalid cabin class.");
 }
 ```
 
@@ -240,23 +235,22 @@ In the while loop structure, the program section is repeated for as long as the 
 
 ```javascript
 while (condition) {
-    // block of code to be executed
-    // when the condition is true
+  // block of code to be executed
+  // when the condition is true
 }
 ```
 
 The program below throws a coin a hundred times. Finally, the program prints how many heads and tails were obtained.
 
 ```javascript
-let heads = 0, tails = 0; // let, because the values of the variables change later
+let heads = 0,
+  tails = 0; // let, because the values of the variables change later
 while (heads + tails < 100) {
-    const r = Math.random();
-    if (r>0.5)
-        heads++;
-    else
-        tails++;
+  const r = Math.random();
+  if (r > 0.5) heads++;
+  else tails++;
 }
-console.log('Heads: ' + heads + ', tails: ' + tails)
+console.log("Heads: " + heads + ", tails: " + tails);
 ```
 
 The output of the program is as follows:
@@ -287,11 +281,11 @@ The while structure can be used to respond to an invalid user input and require 
 Execution of the program cannot proceed until the user has entered a valid weight.
 
 ```javascript
-let weight = prompt('Enter weight (kg).');
+let weight = prompt("Enter weight (kg).");
 while (weight <= 0) {
-   weight = prompt('The weight must be positive. Re-enter the weight (kg).');
+  weight = prompt("The weight must be positive. Re-enter the weight (kg).");
 }
-console.log('You entered the weight: ' + weight + ' kg.');
+console.log("You entered the weight: " + weight + " kg.");
 ```
 
 ### do/while
@@ -315,8 +309,8 @@ For is designed for situations where the number of iterations is based on a loop
 The following example prints numbers from one to ten:
 
 ```javascript
-for (let i = 1; i <= 10 ; i++) {
-    console.log(i);
+for (let i = 1; i <= 10; i++) {
+  console.log(i);
 }
 ```
 
@@ -337,8 +331,8 @@ The execution of the loop proceeds in the following order:
 For example, the following program asks the user for a number and prints all even integers from zero to the number entered by the user:
 
 ```javascript
-const number = prompt('Enter the upper limit for even numbers.');
-for (let i = 0; i <= number ; i += 2) {
+const number = prompt("Enter the upper limit for even numbers.");
+for (let i = 0; i <= number; i += 2) {
   console.log(i);
 }
 ```
@@ -348,8 +342,8 @@ You can emulate while-loop with for by creating an infinite loop and then stoppi
 ```javascript
 // ask for a name, stop when user enters empty value
 for (;;) {
-  const name = prompt('Enter a name');
-  if (name === '') {
+  const name = prompt("Enter a name");
+  if (name === "") {
     break;
   }
   console.log(name);
@@ -367,10 +361,10 @@ A problem like this can be solved with two nested loop structures:
 ```javascript
 let multiplication;
 for (let i = 1; i <= 5; i++) {
-    for (let j = 1; j <= 5; j++) {
-       multiplication = i * j;
-        console.log(i + ' times ' + j + ' is ' + multiplication + ".");
-    }
+  for (let j = 1; j <= 5; j++) {
+    multiplication = i * j;
+    console.log(i + " times " + j + " is " + multiplication + ".");
+  }
 }
 ```
 
