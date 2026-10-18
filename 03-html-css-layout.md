@@ -29,44 +29,42 @@ This HTML code is used as a base for lecture examples. To try the examples, crea
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layout Basics</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Basics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Layout Basics</h1>
 
-  <h1>Layout Basics</h1>
+    <section class="box-demo">
+      <h2>Box Model</h2>
+      <div class="box">This is a box.</div>
+      <div class="box">This is another box.</div>
+    </section>
 
-  <section class="box-demo">
-    <h2>Box Model</h2>
-    <div class="box">This is a box.</div>
-    <div class="box">This is another box.</div>
-  </section>
+    <section>
+      <h2>Flexbox</h2>
+      <div class="flex-container">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+      </div>
+    </section>
 
-  <section>
-    <h2>Flexbox</h2>
-    <div class="flex-container">
-      <div class="card">Card 1</div>
-      <div class="card">Card 2</div>
-      <div class="card">Card 3</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Grid</h2>
-    <div class="grid-container">
-      <div class="grid-item">Cell 1</div>
-      <div class="grid-item">Cell 2</div>
-      <div class="grid-item">Cell 3</div>
-      <div class="grid-item">Cell 4</div>
-      <div class="grid-item">Cell 5</div>
-      <div class="grid-item">Cell 6</div>
-    </div>
-  </section>
-
-</body>
+    <section>
+      <h2>Grid</h2>
+      <div class="grid-container">
+        <div class="grid-item">Cell 1</div>
+        <div class="grid-item">Cell 2</div>
+        <div class="grid-item">Cell 3</div>
+        <div class="grid-item">Cell 4</div>
+        <div class="grid-item">Cell 5</div>
+        <div class="grid-item">Cell 6</div>
+      </div>
+    </section>
+  </body>
 </html>
 ```
 
@@ -76,26 +74,26 @@ Add also an empty `styles.css` file to the same directory to add styles for the 
 
 **Every HTML element is a box!**
 
- ```mermaid
+```mermaid
 flowchart TB
-    subgraph Margin["Margin"]
-        style Margin fill:#ffe6e6,stroke:#000,stroke-width:2px,color:#000
+   subgraph Margin["Margin"]
+       style Margin fill:#ffe6e6,stroke:#000,stroke-width:2px,color:#000
 
-        subgraph Border["Border"]
-            style Border fill:#fff2cc,stroke:#000,stroke-width:2px,color:#000
+       subgraph Border["Border"]
+           style Border fill:#fff2cc,stroke:#000,stroke-width:2px,color:#000
 
-            subgraph Padding["Padding"]
-                style Padding fill:#e6ffe6,stroke:#000,stroke-width:2px,color:#000
+           subgraph Padding["Padding"]
+               style Padding fill:#e6ffe6,stroke:#000,stroke-width:2px,color:#000
 
-                Content["Content"]
-                style Content fill:#e6f0ff,stroke:#000,stroke-width:2px,color:#000
-            end
-        end
-    end
+               Content["Content"]
+               style Content fill:#e6f0ff,stroke:#000,stroke-width:2px,color:#000
+           end
+       end
+   end
 
-    %% Force text color to black
-    classDef default fill:#ffffff,color:#000,stroke:#000;
- ```
+   %% Force text color to black
+   classDef default fill:#ffffff,color:#000,stroke:#000;
+```
 
 - Content: The actual text or image inside the element.
 - Padding: Space inside the element, between content and border.
@@ -144,7 +142,7 @@ body {
   background-color: #f9f9f9;
   color: #333;
   padding: 20px;
-} 
+}
 ```
 
 ### Different types of boxes
@@ -265,7 +263,7 @@ People use websites on many screen sizes. A layout that looks good on a laptop m
 - Layout breaking and elements overlapping
 - Images not resizing properly
 
-Mobile screens are the most popular way to access the web today. The common design practice is to design websites with a "mobile-first" approach, which means designing for mobile devices first and then enhancing the layout for larger screens. This ensures that the website is usable and looks good on mobile devices, which are often more challenging to design for due to their smaller screen size.  
+Mobile screens are the most popular way to access the web today. The common design practice is to design websites with a "mobile-first" approach, which means designing for mobile devices first and then enhancing the layout for larger screens. This ensures that the website is usable and looks good on mobile devices, which are often more challenging to design for due to their smaller screen size.
 
 ### Basic responsive principles
 
@@ -275,38 +273,38 @@ Mobile screens are the most popular way to access the web today. The common desi
 1. Use Flexbox or Grid: These tools help layouts adjust more easily.
 1. Make images flexible, this prevents images from overflowing their container:
 
-    ```css
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    ```
+   ```css
+   img {
+     max-width: 100%;
+     height: auto;
+   }
+   ```
 
 1. Use media queries, they let you change styles for smaller screens. For example, if the screen is 600px wide or smaller, the cards will stack vertically:
 
-    ```css
-    @media (max-width: 600px) {
-      .flex-container {
-        flex-direction: column;
-      }
-    }
-    ```
+   ```css
+   @media (max-width: 600px) {
+     .flex-container {
+       flex-direction: column;
+     }
+   }
+   ```
 
-    Grid example, for large screen 2 columns and for small screen: 1 column:
+   Grid example, for large screen 2 columns and for small screen: 1 column:
 
-    ```css
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
+   ```css
+   .grid-container {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 10px;
+   }
 
-    @media (max-width: 600px) {
-      .grid-container {
-        grid-template-columns: 1fr;
-      }
-    }
-    ```
+   @media (max-width: 600px) {
+     .grid-container {
+       grid-template-columns: 1fr;
+     }
+   }
+   ```
 
 1. Include viewport meta tag in html `head` to make responsive styles to work correctly on mobile devices: `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 

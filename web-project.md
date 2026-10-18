@@ -13,14 +13,13 @@ Your project should use following technologies:
 - **Vanilla JavaScript** – interaction and dynamic functionality
 - **Python + Flask** – backend functionality
 - **HTTP / API communication** – communication between frontend and backend
-- **Data storage** on serverside – using e.g. text files/JSON
+- **Data storage** on server side – using e.g. text files/JSON
 - At least one clear **game mechanic**, where the user's actions affect the game state
-
-- Use of web frameworks like React is forbidden. 
+- Use of web frameworks like React is forbidden.
 
 ## Project idea
 
-The team may choose the theme and game idea by themselves. 
+The team may choose the theme and game idea by themselves.
 
 It's also ok to use one of the text-based ideas from previous course as a base.
 

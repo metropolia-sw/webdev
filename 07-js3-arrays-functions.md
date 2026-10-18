@@ -21,7 +21,7 @@ graph TD;
     A -->|4| F(7);
     A -->|5| G(6);
     A -->|6| H(8);
-``` 
+```
 
 Array's elements are referenced by the name and index of the array variable.
 
@@ -45,12 +45,13 @@ Then add three items to the array:
 numbers[0] = 17;
 numbers[1] = 2;
 numbers[2] = 8;
-```        
+```
+
 Alternatively, the array could be created by writing its contents directly to the statement in which the array variable is defined:
 
 ```javascript
 const numbers = [17, 2, 8];
-```    
+```
 
 Note that you do not need to know the size of the array when creating the array. Once created, the desired number of items can be added to the array.
 
@@ -61,10 +62,10 @@ The size of the array is determined by the largest index used. The size is one l
 You can loop an array by using for statement and [array.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length).
 
 ```javascript
-const names = ['Frank', 'Scott', 'Jasmine', 'Don'];
+const names = ["Frank", "Scott", "Jasmine", "Don"];
 
 for (let i = 0; i < names.length; i++) {
-    console.log(`Name: ${names[i]}`);
+  console.log(`Name: ${names[i]}`);
 }
 ```
 
@@ -80,7 +81,7 @@ Name: Don
 You can also use [for...of statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of) to do the loop:
 
 ```javascript
-const names = ['Frank', 'Scott', 'Jasmine', 'Don'];
+const names = ["Frank", "Scott", "Jasmine", "Don"];
 
 for (const name of names) {
   console.log(`Name: ${name}`);
@@ -105,7 +106,7 @@ Methods are called by first writing the name of the array variable, then point, 
 Note that the `sort()` method mentioned above sorts the array in alphabetical order and not in numerical order. In this case, for example, the values 100, 23 and 15 would be sorted in alphabetical order 100, 15, 23, which is usually not the order desired by the programmer. This can be fixed by typing the desired sort function in the `sort ()` method call. For example, the array `numbers` would be sorted in numerical order as follows:
 
 ```javascript
-numbers.sort((a,b) => a-b);
+numbers.sort((a, b) => a - b);
 ```
 
 Above example uses so-called arrow function to write the sorting function; arrow functions will be explained later.
@@ -116,25 +117,25 @@ Object Literal defines statically declared data structure. Object literal is sim
 
 ```javascript
 const student = {
-  firstName: 'Greg',
-  lastName: 'Focker',
-  studentId: '234359',
-  phone: '040 5902123',
-}
+  firstName: "Greg",
+  lastName: "Focker",
+  studentId: "234359",
+  phone: "040 5902123",
+};
 ```
 
 Properties can be referred to by alternative notations. For example, a student's first name is given by `student.firstName` or `student["firstName"]`.
 
 ```javascript
 const greeting = `Hello, my name is ${student.firstName} ${student.lastName}`;
-const studentInfo = `student number: ${student['studentId']}, phone number: ${student['phone']}`
+const studentInfo = `student number: ${student["studentId"]}, phone number: ${student["phone"]}`;
 ```
 
 Object literals are dynamic, so you can add and remove properties at any point (even if you use const). This is called mutating the object.
 
 ```javascript
-student.address = 'Schoolroad 7';  // adds 'address' property to previous example
-delete student.phone;              // deletes 'phone' property from previous example
+student.address = "Schoolroad 7"; // adds 'address' property to previous example
+delete student.phone; // deletes 'phone' property from previous example
 console.log(student);
 ```
 
@@ -143,19 +144,27 @@ The property key can also be stored in a variable. The following code prints the
 ```javascript
 const chosenProperty = "lastName";
 console.log(student[chosenProperty]);
-``` 
+```
 
 The definition of an object literal can also contain functions. The example below creates an object for which the remaining number of credits required for the degree is calculated using a function. Finally, that credit is printed.
 
 ```javascript
 const student2 = {
-  firstName: 'Ahmed',
-  lastName: 'Hussein',
+  firstName: "Ahmed",
+  lastName: "Hussein",
   credits: 175,
-  hasLeft: function() {return 240-this.credits}
+  hasLeft: function () {
+    return 240 - this.credits;
+  },
 };
 
-console.log("Student " + student2.firstName + " is missing " + student2.hasLeft() + " credits.");
+console.log(
+  "Student " +
+    student2.firstName +
+    " is missing " +
+    student2.hasLeft() +
+    " credits.",
+);
 ```
 
 Functions are discussed in detail below.
@@ -189,10 +198,10 @@ The following function prints a constant greeting text:
 
 ```javascript
 function greet() {
-  console.log('Well, hello!');
+  console.log("Well, hello!");
   return;
 }
-```     
+```
 
 The function ends with a `return` statement. The `return` statement is also used to return a return value, but in this case there is no return value.
 
@@ -215,7 +224,7 @@ The greeting function described above is extended so that the programmer can spe
 ```javascript
 function greet(text, times) {
   for (let i = 1; i <= times; i++) {
-    console.log(text + ' ' + i + '. time!');
+    console.log(text + " " + i + ". time!");
   }
   return;
 }
@@ -228,7 +237,7 @@ When a function is called and execution passes to the function, the values of th
 Write a function call below the function definition:
 
 ```javascript
-greet('Hi', 4);
+greet("Hi", 4);
 ```
 
 The program produces the following output:
@@ -248,7 +257,7 @@ The function written in this way is more general than before. It can be used to 
 
 The parameters can be used to give the function the necessary input data from the outside, on the basis of which the function performs its function. Often, the result of that action is a result that must be passed back to the part of the program (the main program or another function) that originally called the function. The result to be returned is called the return value of the function.
 
-For example a program that calculates the quadratic sum of two numbers. The quadratic sum of the numbers 2 and 5 is 2 * 2 + 5 * 5, or 29. The numbers whose quadratic sum is calculated (e.g., 2 and 5) are parameters of the function. Correspondingly, the result of the calculation (e.g. 29) is the return value of the function, i.e. the result which is passed to the part of the program which calls the function.
+For example a program that calculates the quadratic sum of two numbers. The quadratic sum of the numbers 2 and 5 is 2 _ 2 + 5 _ 5, or 29. The numbers whose quadratic sum is calculated (e.g., 2 and 5) are parameters of the function. Correspondingly, the result of the calculation (e.g. 29) is the return value of the function, i.e. the result which is passed to the part of the program which calls the function.
 
 The return value is returned with the `return` statement. For example, the value of a variable called `result` would be returned with the following statement:
 
@@ -264,10 +273,10 @@ function quadraticSum(first, second) {
   return result;
 }
 
-const num1 = prompt('Enter 1. number.');
-const num2 = prompt('Enter 2. number.');
+const num1 = prompt("Enter 1. number.");
+const num2 = prompt("Enter 2. number.");
 const quad = quadraticSum(num1, num2);
-console.log('The quadratic sum of ' + num1 + ' and ' + num2 + ' is ' + quad);
+console.log("The quadratic sum of " + num1 + " and " + num2 + " is " + quad);
 ```
 
 ## Visibility of variables
@@ -288,7 +297,7 @@ const n1 = 3; // global variable
 function hello() {
   var n2 = 5; // an internal variable of a function
 
-  if (n2>0) {
+  if (n2 > 0) {
     const n3 = 8; // an internal variable of a block
     var n4 = 9; // an internal variable of a function
   }
@@ -296,7 +305,6 @@ function hello() {
   console.log(n2); // the internal variable is aviailable inside the function
   //console.log(n3); -- an internal variable of a block is not available outside the function
   console.log(n4); // the internal variable of the function is available inside the function
-
 }
 
 hello();
@@ -323,15 +331,15 @@ Consider, for example, the program below, in which the main program creates a th
 
 ```javascript
 function grow(array) {
-  for (let i = 0; i<array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     array[i]++;
   }
   return;
 }
 
-const numbers = [5,6,7];
+const numbers = [5, 6, 7];
 grow(numbers);
-console.log(numbers[0] + ' ' + numbers[1] + ' ' + numbers[2]);
+console.log(numbers[0] + " " + numbers[1] + " " + numbers[2]);
 ```
 
 The program prints:
@@ -354,17 +362,17 @@ It is observed that when the array passed by the main program parameter is modif
 You can return a reference to an array as the return value of a function. Let's look at the program below that returns the values of a lottery as an array:
 
 ```javascript
-function doLottery (numbers, num) {
+function doLottery(numbers, num) {
   const row = [];
   let r;
-  for (let i = 0; i < num; i ++) {
+  for (let i = 0; i < num; i++) {
     let ok = false;
 
     while (!ok) {
       ok = true;
       r = Math.floor(Math.random() * numbers) + 1;
-      for (let j = 0; j < i + 1; j ++) {
-        if (row [j] === r) {
+      for (let j = 0; j < i + 1; j++) {
+        if (row[j] === r) {
           ok = false;
         }
       }
@@ -374,9 +382,9 @@ function doLottery (numbers, num) {
   return row;
 }
 
-const lottery = doLottery(40,7);
+const lottery = doLottery(40, 7);
 for (let i = 0; i < lottery.length; i++) {
-    console.log(lottery[i]);
+  console.log(lottery[i]);
 }
 ```
 
@@ -387,8 +395,9 @@ Note that the lottery number array was created inside the function. The referenc
 The examples on this page are written using the traditional `function` statement in JavaScript. The ES6 language specification provides an alternative, more compact way to write a function. Functions according to this notation are called arrow functions, or lambda functions.
 
 Let's write the quadratic calculating function in the previous exam this time as an arrow function:
+
 ```javascript
-const quadraticSum = (a, b) => (a * a + b * b);
+const quadraticSum = (a, b) => a * a + b * b;
 ```
 
 In this representation, a descending, unnamed function of the quadratic sum seems to be placed as the value of a constant named `quadraticSum`.
@@ -398,23 +407,22 @@ The parameters (in this case `a` and `b`) are listed before the arrow operator, 
 The arrow function is called in the same way as a function written with the `function` keyword.
 
 ```javascript
-console.log(quadraticSum(3,5));
+console.log(quadraticSum(3, 5));
 ```
-
 
 Let us now consider attaching a block of code to an arrow function. The version of the `quadraticSum` function below also includes a print statement, so a block of code is needed to write the statement. In this notation, the return value can be passed with the `return` statement.
 
 ```javascript
-const quadraticSum = (a,b) => {
-  console.log('quadraticSum was called.');
-  return (a * a + b * b);
-}
+const quadraticSum = (a, b) => {
+  console.log("quadraticSum was called.");
+  return a * a + b * b;
+};
 ```
 
 Calling a function that contains a block of code is the same to the previous example:
 
 ```javascript
-console.log(quadraticSum(3,5));
+console.log(quadraticSum(3, 5));
 ```
 
 ---

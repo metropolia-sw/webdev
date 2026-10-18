@@ -11,7 +11,7 @@
 1. [JavaScript 3: Arrays and functions](07-js3-arrays-functions.md)
 1. [JavaScript 4: Document Object Model (DOM) and events](08-js4-dom-events.md)
 1. [Building a web server with Python](09-python-server.md)
-1. [JavaScript 5: Asynchronous programming, Ajax and Open APIs](10-js5-ajax.md) 
+1. [JavaScript 5: Asynchronous programming, Ajax and Open APIs](10-js5-ajax.md)
 
 ## Exercises
 
@@ -35,11 +35,15 @@
 ### Recommended extra material and assignments
 
 - [Udemy, JavaScript](https://www.udemy.com/course/javascript-essentials/)
-  1. Section 1: 1-6 
-  2. Section 2: 7-10 
+  1. Section 1: 1-6
+  2. Section 2: 7-10
   3. Section 3: 27-30
 
 ---
+
+## Suomenkielinen materiaali
+
+Suomenkielinen materiaali löytyy [täältä](fi/README.md).
 
 ## License
 
