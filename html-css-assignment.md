@@ -36,6 +36,7 @@ Evaluation will be done on scale **pass/fail**. The assignment is considered pas
   - _UPDATE_: https://color.a11y.com/Contrast/ is no longer available. Use https://wave.webaim.org/ instead. [Example screenshot here](assets/wave.png).
   - Contrast errors needs to be 0. Other items are checked with validation and Lighthouse below.
 - Validation is passed
+  - [w3c HTML Validator](https://validator.w3.org/)
   - No errors
   - Warnings, like no heading in `<article>` or `<section>` etc. are allowed
 - Lighthouse check score must be at least 90 or 3/4 or 4/5 depending on the Browser

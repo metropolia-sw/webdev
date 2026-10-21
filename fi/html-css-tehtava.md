@@ -38,6 +38,7 @@ Arviointiasteikko on **hyväksytty/hylätty**. Tehtävä hyväksytään, jos seu
   - _PÄIVITYS_: https://color.a11y.com/Contrast/ ei ole enää käytettävissä. Käytä sen sijaan palvelua https://wave.webaim.org/. [Esimerkkikuvakaappaus täällä](../assets/wave.png).
   - Kontrastivirheitä ei saa olla yhtään. Työkalun muita huomautuksia ei arvioida tässä, koska ne tarkistetaan alla mainitulla validoinnilla ja Lighthouse-tarkistuksella.
 - Validointi menee läpi (validaattori tarkistaa, että HTML-koodi noudattaa HTML-standardia).
+  - [w3c HTML Validator](https://validator.w3.org/)
   - Ei virheitä.
   - Varoitukset, kuten otsikon puuttuminen `<article>`- tai `<section>`-elementistä, ovat sallittuja.
 - Lighthouse-tarkistuksen pistemäärän on oltava vähintään 90 tai selaimesta riippuen 3/4 tai 4/5. Lighthouse on Chromen kehittäjätyökaluihin sisältyvä työkalu, joka arvioi sivun laatua, esimerkiksi saavutettavuutta.
