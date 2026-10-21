@@ -10,7 +10,7 @@ Projektissa on käytettävä seuraavia teknologioita:
 
 - **HTML** – rakenne ja sisältö
 - **CSS** – tyylit ja responsiivinen asettelu
-- **Vanilla JavaScript** (pelkkä JavaScript ilman sovelluskehyksiä) – vuorovaikutus ja dynaaminen toiminnallisuus
+- **Vanilla JavaScript** (pelkkä JavaScript ilman kirjastoja tai sovelluskehyksiä) – vuorovaikutus ja dynaaminen toiminnallisuus
 - **Python + Flask** – taustapalvelun (_backend_) toiminnallisuus
 - **HTTP- ja rajapintaviestintä** – viestintä käyttöliittymän (_frontend_) ja taustapalvelun välillä
 - **Tietojen tallennus** palvelimelle – esimerkiksi tekstitiedostoihin tai JSON-tiedostoihin
