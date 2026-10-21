@@ -236,7 +236,7 @@ Tee grid-säiliö lisäämällä seuraavat tyylit:
 ```
 
 - `display: grid` tekee säiliöstä ruudukon
-- `grid-template-columns: 1fr 1fr` luo kaksi yhtä leveää saraketta (yksikkö `fr` tarkoittaa osuutta vapaasta tilasta)
+- `grid-template-columns: 1fr 1fr` luo kaksi yhtä leveää saraketta (yksikkö `fr` tarkoittaa osuutta vapaasta tilasta [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/flex_value))
 - `gap: 10px` lisää tilaa elementtien väliin
 
 Lisää seuraavaksi tyylit ruudukon elementeille:
