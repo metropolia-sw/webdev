@@ -259,7 +259,7 @@ We will study the DOM in more detail in the next weeks when we learn JavaScript.
 - Example:
 
 ```html
-<table style="width:100%">
+<table>
   <tr>
     <th>Firstname</th>
     <th>Lastname</th>
