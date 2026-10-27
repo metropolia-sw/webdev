@@ -28,6 +28,8 @@ The `alert()` function opens a pop-up window with text and an OK button. This ca
 alert("Some text");
 ```
 
+A thing to note is that the `alert()` function is not recommended for use in modern web applications. User experience suffers, and calling alert() will pause the execution of JavaScript code until the user dismisses the alert.
+
 #### [confirm](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
 
 The `confirm()` function opens a pop-up window with text and two buttons: OK and Cancel. This allows the user to be asked to accept or reject an action.

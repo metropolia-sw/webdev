@@ -28,6 +28,8 @@ Alun `window.` voi siis yleensä jättää pois.
 alert("Jotain tekstiä");
 ```
 
+Huomaa, että `alert()`-funktion käyttöä ei suositella nykyaikaisissa verkkosovelluksissa. Se heikentää käyttökokemusta, ja sen kutsuminen keskeyttää JavaScriptin suorittamisen, kunnes käyttäjä sulkee ilmoitusikkunan.
+
 #### [confirm](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm)
 
 `confirm()`-funktio avaa ponnahdusikkunan, jossa on tekstiä ja kaksi painiketta: OK ja Cancel (suomenkielisessä selaimessa Peruuta). Näin voit pyytää käyttäjää hyväksymään tai hylkäämään toiminnon.

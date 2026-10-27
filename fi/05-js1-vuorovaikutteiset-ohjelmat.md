@@ -6,7 +6,7 @@ Koska Python on sinulle jo tuttu, voit tarkistaa kielten tärkeimmät erot tää
 
 Vuorovaikutteisuudella tarkoitetaan mallia, jossa ohjelma
 
-1. lukee käyttäjältä syötteen (_input_)
+1. lukee käyttäjältä syötteen
 2. käsittelee syötteen
 3. tulostaa tuloksen tai päivittää käyttöliittymää.
 
@@ -14,7 +14,7 @@ Esimerkki tästä on ohjelma, jossa käyttäjä syöttää kaksi lukua ja ohjelm
 
 ## JavaScriptin lisääminen HTML-dokumenttiin
 
-Voit lisätä JavaScriptiä HTML-dokumenttiin `<script>`-elementillä kahdella tavalla: suoraan dokumenttiin (_inline_) tai lataamalla ulkoisen tiedoston.
+Voit lisätä JavaScriptiä HTML-dokumenttiin `<script>`-elementillä kahdella tavalla: suoraan dokumenttiin tai lataamalla ulkoisen tiedoston.
 
 ### Suoraan dokumenttiin
 
@@ -128,7 +128,7 @@ Avaamasi verkkosivu näyttää selaimessa tältä:
 
 ![tulostus DOMiin](../assets/dom-print.png)
 
-DOMin käsittelyä opetellaan tarkemmin myöhemmin. Toistaiseksi riittää ymmärtää, että koodi `document.querySelector('#target')` etsii kappale-elementin, jonka `id`-attribuutin arvo on ”target”. Sen jälkeen elementin `innerHTML`-ominaisuuden (_property_) arvoksi asetetaan tervehdyksen sisältävä merkkijono.
+DOMin käsittelyä opetellaan tarkemmin myöhemmin. Toistaiseksi riittää ymmärtää, että koodi `document.querySelector('#target')` etsii kappale-elementin, jonka `id`-attribuutin arvo on ”target”. Sen jälkeen elementin `innerHTML`-ominaisuuden arvoksi asetetaan tervehdyksen sisältävä merkkijono.
 
 Käytännössä verkkosivulle tulostava koodi kirjoitetaan yleensä funktioihin, joita kutsutaan jonkin tapahtuman (_event_) seurauksena, esimerkiksi kun käyttäjä painaa sivun painiketta. Tämä edellyttää, että ymmärrät funktiot ja DOMin, joten sitä ei käsitellä tässä tarkemmin.
 
@@ -136,7 +136,7 @@ Tästä eteenpäin esimerkeissä käytetään enimmäkseen konsoliin tulostamist
 
 ### Merkkijonoliteraalit
 
-Edellä tulostetut merkkijonot, kuten `Moikka, kaveri!`, ovat esimerkkejä merkkijonoliteraaleista. Merkkijono (_string_) on jono merkkejä eli tekstiä. Literaali (_literal_) on arvo, joka kirjoitetaan ohjelmakoodiin sellaisenaan. Merkkijonoliteraalit kirjoitetaan aina lainausmerkkien sisään. JavaScriptissä käytetään yleensä yksinkertaisia lainausmerkkejä (`'`).
+Edellä tulostetut merkkijonot, kuten `Moikka, kaveri!`, ovat esimerkkejä merkkijonoliteraaleista. Merkkijono (_string_) on jono merkkejä eli tekstiä. Literaali (_literal_) on arvo, joka kirjoitetaan ohjelmakoodiin sellaisenaan. Merkkijonoliteraalit kirjoitetaan aina lainausmerkkien sisään. JavaScriptissä merkkijonoja voi kirjoittaa yksittäisillä lainausmerkeillä (`'`), kaksoislainausmerkeillä (`"`).
 
 Esimerkkejä merkkijonoliteraaleista:
 
@@ -150,7 +150,7 @@ Lainausmerkeistä JavaScript-tulkki tunnistaa, että kyseessä on merkkijonolite
 
 Ohjelman tarvitsemat arvot voi tallentaa muuttujiin (_variable_). Muuttujaan tallennettua arvoa voi lukea ohjelman aikana monta kertaa, ja `let`-avainsanalla määritellyn muuttujan arvoa voi myös muuttaa.
 
-JavaScriptin muuttujat määritellään `const`-, `let`- tai `var`-avainsanalla. Avainsanan valinta vaikuttaa muun muassa muuttujan näkyvyysalueeseen (_scope_) eli siihen, missä osassa ohjelmaa muuttujaa voi käyttää: koko funktiossa (`var`) vai vain siinä lohkossa (_block_), jossa se on määritelty (`let` ja `const`).
+JavaScriptin muuttujat määritellään `const`-, `let`- tai `var`-avainsanalla. Avainsanan valinta vaikuttaa muun muassa muuttujan näkyvyysalueeseen (_scope_) eli siihen, missä osassa ohjelmaa muuttujaa voi käyttää: koko funktiossa (`var`) vai vain siinä lohkossa (_block_), jossa se on määritelty (`let` ja `const`). Huom, `var`-avainsanaa ei enää suositella käytettäväksi.
 
 Lohkoja ja funktioita käsitellään myöhemmin. Tässä vaiheessa riittää, että opit määrittelemään muuttujia `const`- ja `let`-avainsanoilla.
 
@@ -186,6 +186,7 @@ number = 153;
 name = "Anna";
 console.log(number);
 console.log(name);
+
 number = -17;
 name = "Pekka";
 console.log(number);
@@ -267,16 +268,18 @@ Osamerkkijonot voi myös tallentaa ensin muuttujiin, yhdistää ne uuteen muuttu
 
 ```javascript
 let first, second, third, all;
+
 first = "Hyvää ";
 second = "huomenta ";
 third = "kaikille.";
 all = first + second + third;
+
 console.log(all);
 ```
 
 ## Mallimerkkijonot (template literals)
 
-Mallimerkkijonot (_template literals_) ovat merkkijonoliteraaleja, jotka rajataan lainausmerkkien sijaan gravis-merkeillä (`). Niillä voi kirjoittaa monirivisiä merkkijonoja ja upottaa merkkijonon sisään lausekkeita eli koodia, jolla on arvo, kuten muuttujan nimiä tai laskutoimituksia (_string interpolation_). Lisäksi niillä voi tehdä niin sanottuja tagattuja malleja (_tagged templates_), joita ei käsitellä tässä.
+Mallimerkkijonot (_template literals_) ovat merkkijonoliteraaleja, jotka rajataan lainausmerkkien sijaan gravis-merkeillä (`) (englanniksi backtick). Niillä voi kirjoittaa monirivisiä merkkijonoja ja upottaa merkkijonon sisään lausekkeita eli koodia, jolla on arvo, kuten muuttujan nimiä tai laskutoimituksia.
 
 ```javascript
 const someText = `Tässä on monirivistä tekstiä.
@@ -296,7 +299,7 @@ Edellisissä esimerkeissä ohjelmien tuottamat tulosteet olivat aina samat, eik�
 
 Tällaiset ohjelmat ovat harvinaisia. Yleensä halutaan, että käyttäjä voi antaa ohjelmalle syötteitä, jotka vaikuttavat ohjelman kulkuun.
 
-Syöte luetaan [`prompt()`](08-js4-dom-ja-tapahtumat.md#prompt)-funktiolla. Funktiolle annetaan argumenttina (_argument_) merkkijono, joka näytetään käyttäjälle valintaikkunassa. Seuraava lause kysyy käyttäjän nimeä:
+Syöte luetaan [`prompt()`](08-js4-dom-ja-tapahtumat.md#prompt)-funktiolla. Funktiolle annetaan argumenttina merkkijono, joka näytetään käyttäjälle valintaikkunassa. Seuraava lause kysyy käyttäjän nimeä:
 
 ```javascript
 prompt("Kirjoita nimesi.");
@@ -306,7 +309,7 @@ Selainikkunaan avautuu valintaikkuna:
 
 ![valintaikkuna](../assets/dialog.png)
 
-Tuossa muodossa kysymys on kuitenkin melko hyödytön, koska käyttäjän antamaa nimeä ei tallenneta mihinkään. `prompt()`-funktion paluuarvo (_return value_) on käyttäjän kirjoittama teksti. Se tallennetaan lähes aina muuttujaan, jotta sitä voi käyttää myöhemmin ohjelmassa. Huomaa, että paluuarvo on aina merkkijono, vaikka käyttäjä kirjoittaisi luvun.
+Tuossa muodossa kysymys on kuitenkin melko hyödytön, koska käyttäjän antamaa nimeä ei tallenneta mihinkään. `prompt()`-funktion paluuarvo on käyttäjän kirjoittama teksti. Se tallennetaan lähes aina muuttujaan, jotta sitä voi käyttää myöhemmin ohjelmassa. Huomaa, että paluuarvo on aina merkkijono, vaikka käyttäjä kirjoittaisi luvun.
 
 Seuraava esimerkkiohjelma kysyy käyttäjän nimen ja tervehtii häntä henkilökohtaisesti:
 
