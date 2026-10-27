@@ -114,7 +114,7 @@ Example, add to `styles.css` and try modifying the values:
 
 This controls all elements having the class `box` (in this case, the div in the Box Model section). You can change the values to see how they affect the layout.
 
-By default, `width` only controls the content area. So, in the example above, the total width of the box is: 200px + 20px + 4px + 20px = 244px (content + padding + border + margin). If you want the total width to be 200px, including padding and border, you can use `box-sizing: border-box;` which makes the width include padding and border.
+By default, `width` only controls the content area. Padding and border are added on both sides. So, in the example above, the visible width of the box is 200px + 2 × 20px + 2 × 4px = 248px (content + padding + border). The margin is not part of the box width, but it reserves an additional 20px of empty space on each side of the box. If you want the total width to be 200px, including padding and border, you can use `box-sizing: border-box;` which makes the width include padding and border.
 
 You can set this rule for all elements by using the universal selector `*`:
 
