@@ -6,7 +6,7 @@ Voit julkaista verkkosivustosi Metropolian palvelimella users.metropolia.fi-palv
 
 1. Siirrä verkkosivustosi tiedostot (kaikki HTML-, CSS- ja kuvatiedostot jne.) palvelimella olevan kotihakemistosi `public_html`-hakemistoon (HUOM! Älä missään tapauksessa poista tätä hakemistoa).
    - Pääset kotihakemistoosi kirjautumalla palvelimelle `shell.metropolia.fi` esimerkiksi SSH-yhteydellä (salattu etäyhteys palvelimelle). Tiedostot voit siirtää scp- tai sftp-ohjelmalla. Ennen kirjautumista sinun täytyy luoda SSH-avainpari (katso alla olevat linkit).
-   - Aloittelijalle helpompi vaihtoehto on Webdisk-palvelu, jota käytetään selaimella: <https://webdisk.metropolia.fi/>
+   - Aloittelijalle helpompi vaihtoehto on Webdisk-palvelu, jota käytetään selaimella: <https://webdisk.metropolia.fi/> (Huom: Metropolian verkon ulkopuolella tarvitset [VPN-yhteyden](https://wiki.metropolia.fi/spaces/itservices/pages/288850391/VPN+Connection+via+GlobalProtect+Service).)
 
 2. Julkaistu verkkosivustosi löytyy osoitteesta <https://users.metropolia.fi/~yourusername>, jossa `yourusername` korvataan omalla Metropolian käyttäjätunnuksellasi.
    - Jos käyttäjätunnuksesi on esimerkiksi ”janedoe”, sivustosi osoite on <https://users.metropolia.fi/~janedoe>
