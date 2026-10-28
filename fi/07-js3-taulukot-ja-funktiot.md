@@ -23,7 +23,7 @@ graph TD;
     A -->|6| H(8);
 ```
 
-Taulukon alkioon viitataan taulukkomuuttujan nimellä ja alkion indeksillä (_index_) eli järjestysnumerolla.
+Taulukon alkioon viitataan taulukkomuuttujan nimellä ja alkion indeksillä eli järjestysnumerolla.
 
 Esimerkissä `workingHours` on taulukkomuuttujan nimi, ja nuolten luvut 0–6 ovat indeksejä.
 
@@ -90,7 +90,7 @@ for (const name of names) {
 
 ## Taulukon metodit
 
-Taulukoilla on valmiita metodeja (_method_) eli taulukkoon liittyviä funktioita, joilla voit käsitellä taulukkoa. Esimerkkejä näistä metodeista:
+Taulukoilla on valmiita metodeja eli taulukkoon liittyviä funktioita, joilla voit käsitellä taulukkoa. Esimerkkejä näistä metodeista:
 
 - `sort()` lajittelee taulukon alkiot aakkosjärjestykseen
 - `reverse()` kääntää taulukon alkiot päinvastaiseen järjestykseen
@@ -111,6 +111,8 @@ numbers.sort((a, b) => a - b);
 
 Yllä olevassa esimerkissä vertailufunktio on kirjoitettu nuolifunktiona (_arrow function_). Nuolifunktioita käsitellään tämän sivun lopussa.
 
+Huom: `.sort()` -metodi on usein työhaastattelukysymys.
+
 ### Olioliteraalit
 
 Olioliteraali (_object literal_) on tapa luoda olio (_object_) kirjoittamalla sen sisältö suoraan koodiin. Olioliteraali on aaltosulkeiden sisällä oleva luettelo pilkuilla erotettuja nimi–arvo-pareja. Näitä nimiä kutsutaan olion ominaisuuksiksi (_property_). Oliota voi käyttää samaan tapaan kuin esimerkiksi Pythonin sanakirjaa. Tyypillinen olioliteraali näyttää tältä:
@@ -127,7 +129,10 @@ const student = {
 Ominaisuuteen voi viitata kahdella tavalla: pistemerkinnällä tai hakasulkeilla. Esimerkiksi opiskelijan etunimen saa merkinnällä `student.firstName` tai `student["firstName"]`.
 
 ```javascript
+// pistemerkintä, engl. dot notation
 const greeting = `Hei, nimeni on ${student.firstName} ${student.lastName}`;
+
+// hakasulkeilla, engl. bracket notation
 const studentInfo = `opiskelijanumero: ${student["studentId"]}, puhelinnumero: ${student["phone"]}`;
 ```
 
@@ -203,7 +208,7 @@ function greet() {
 }
 ```
 
-Funktion suoritus päättyy `return`-lauseeseen. `return`-lauseella voi myös palauttaa paluuarvon, mutta tässä funktiossa paluuarvoa ei ole. Tällaisen `return`-lauseen voi jättää kokonaan pois, jolloin funktio päättyy viimeisen lauseensa jälkeen.
+Funktion suoritus päättyy `return`-lauseeseen. `return`-lauseella voi myös palauttaa paluuarvon, mutta tässä funktiossa paluuarvoa ei ole. Tällaisen `return`-lauseen voi jättää kokonaan pois, jolloin funktio päättyy viimeisen lauseensa jälkeen. Funktio jolla ei ole palautusarvoa, palauttaa automaattisesti arvon `undefined`.
 
 Pelkkä funktion määrittely ei vielä suorita funktiota. Funktio suoritetaan vasta, kun sitä kutsutaan.
 
