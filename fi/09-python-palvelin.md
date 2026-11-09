@@ -33,7 +33,7 @@ Flask-kirjaston avulla Python-ohjelmasta tulee taustapalvelu. Flaskilla ohjelmoi
 
 Tarkastellaan esimerkkiä, jossa luodaan taustapalvelu, joka vastaanottaa kaksi lukua ja laskee ne yhteen. Tällainen laskutoimitus ei tietenkään tarvitsisi taustapalvelua. Yksinkertainen esimerkki vain havainnollistaa tarvittavaa tekniikkaa.
 
-Asenna ensin Flask-kirjasto. Avaa VS Codessa terminaali ja suorita komento `python -m pip install flask`. Komento asentaa Flask-kirjaston ja sen riippuvuudet eli muut kirjastot, joita Flask tarvitsee toimiakseen. Asennuksen jälkeen Flask on valmis käytettäväksi. Huom: mikäli saat virheilmoituksia, varmista että olet asentanut pythonin virtuaaliympäristöön (virtual environment).
+Asenna ensin Flask-kirjasto. Avaa VS Codessa terminaali ja suorita komento `python -m pip install flask`. Komento asentaa Flask-kirjaston ja sen riippuvuudet eli muut kirjastot, joita Flask tarvitsee toimiakseen. Asennuksen jälkeen Flask on valmis käytettäväksi. Huom: mikäli saat virheilmoituksia, varmista että olet asentanut pythonin virtuaaliympäristöön (virtual environment). [VS Code - Virtual Environment Setup ohjeet](../vscode-venv-setup.md)
 
 ## Päätepisteiden ohjelmointi
 
