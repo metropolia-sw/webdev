@@ -72,6 +72,7 @@ Voit valita tehtävät oman osaamistasosi mukaan. Huolehdi vain siitä, että te
    - Tulosta silmälukujen summa konsoliin tai HTML-dokumenttiin.
 8. Kirjoita ohjelma, joka kysyy käyttäjältä alku- ja loppuvuoden. Ohjelma tulostaa kaikki karkausvuodet käyttäjän antamalta väliltä. Tulosta vuodet HTML-dokumenttiin järjestämättömänä luettelona (`<ul>`). (**3p**)
    - Esimerkki tulosteen HTML-koodista:
+
    ```html
    <ul>
      <li>1992</li>
@@ -81,6 +82,7 @@ Voit valita tehtävät oman osaamistasosi mukaan. Huolehdi vain siitä, että te
      <li>2008</li>
    </ul>
    ```
+
 9. Kirjoita ohjelma, joka kysyy käyttäjältä kokonaisluvun ja kertoo, onko luku alkuluku. (**2p**)
    - Alkuluku on ykköstä suurempi kokonaisluku, joka on jaollinen vain luvulla 1 ja itsellään.
    - Esimerkiksi 13 on alkuluku, koska sen voi jakaa vain luvuilla 1 ja 13 niin, että tulos on kokonaisluku.
@@ -195,11 +197,13 @@ Voit valita tehtävät oman osaamistasosi mukaan. Huolehdi vain siitä, että te
 
 3. Avaa kansio `t3` kehitysympäristössäsi tai editorissasi. Lisää HTML-koodia `innerHTML`-ominaisuuden avulla. (**2p**)
    - Lisää seuraava HTML-koodi elementtiin, jolla on `id="target"`. Lisää `names`-taulukon arvot `<li>`-elementteihin for-silmukassa.
+
    ```html
    <li>John</li>
    <li>Paul</li>
    <li>Jones</li>
    ```
+
 4. Avaa kansio `t4` kehitysympäristössäsi tai editorissasi. Lisää HTML-koodia metodien `createElement()` ja `appendChild()` avulla. (**2p**)
    - Lisää seuraava HTML-koodi elementtiin, jolla on `id="target"`. Lisää `students`-taulukon arvot `<option>`-elementteihin for-silmukassa.
 
@@ -213,6 +217,7 @@ Voit valita tehtävät oman osaamistasosi mukaan. Huolehdi vain siitä, että te
 
 5. Avaa kansio `t5` kehitysympäristössäsi tai editorissasi. Luo useita `<article>`-elementtejä, joissa on otsikko, kuva, kuvateksti ja kuvaus. Täytä ne `picArray`-taulukon tiedoilla. Lisää `<article>`-elementit `<section>`-elementtiin. (**5p**)
    - Jokaisen `<article>`-elementin rakenteen on oltava tällainen:
+
    ```html
    <article class="card">
      <h2>title_from_picArray</h2>
@@ -223,6 +228,7 @@ Voit valita tehtävät oman osaamistasosi mukaan. Huolehdi vain siitä, että te
      <p>description_from_picArray</p>
    </article>
    ```
+
 6. Avaa kansio `t6` kehitysympäristössäsi tai editorissasi. Tee skripti, joka avaa ilmoitusikkunan tekstillä ”Button Clicked”, kun `<button>`-elementtiä napsautetaan. (**1p**)
 7. Avaa kansio `t7` kehitysympäristössäsi tai editorissasi. Tee JavaScriptillä hover-efekti eli muutos, joka tapahtuu, kun hiiri viedään elementin päälle. (**2p**)
    - Kun käyttäjä vie hiiren `<p id="trigger">`-elementin päälle, vaihda `<img id="target">`-elementin kuva `picA.jpg`:stä `picB.jpg`:hen.
@@ -334,11 +340,13 @@ Voit valita tehtävät oman osaamistasosi mukaan. Huolehdi vain siitä, että te
    - Lisää nyt lomake, johon voit syöttää hakusanan samaan tapaan kuin tehtävissä 1–3.
    - Lähetä hakusana `fetch()`-funktiolla osoitteeseen `https://api.chucknorris.io/jokes/search?query=${value_from_input}`.
    - Tulosta jokainen vitsi tässä muodossa:
+
    ```html
    <article>
      <p>Vitsi tähän</p>
    </article>
    ```
+
 7. Haastava **lisätehtävä**: reittihaku [Digitransit-rajapinnalla](https://digitransit.fi/en/developers/apis/1-routing-api/) (**16p**)
    - **Ei heikkohermoisille.** Älä tee tätä, jos se vie aikaa projektityöltä. Se ei kannata.
    - Tee sovellus, joka näyttää reitin käyttäjän antamasta osoitteesta koululle (Karaportti 2).
