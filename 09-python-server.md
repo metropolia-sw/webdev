@@ -33,7 +33,7 @@ A Python program is made into a backend service using the Flask library. Flask e
 
 Let's look at an example where we create a backend service that receives two numbers and adds them together. This kind of an operation would not of course need a backend service. However, this simple example is used just to demonstrate the required technology.
 
-We will start by installing the Flask library. With VS Code, the installation can be done by opening the terminal and running the command `python -m pip install flask` in the terminal. The command will install the Flask library and its dependencies. After the installation, the Flask library is now ready to use.
+We will start by installing the Flask library. With VS Code, the installation can be done by opening the terminal and running the command `python -m pip install flask` in the terminal. The command will install the Flask library and its dependencies. After the installation, the Flask library is now ready to use. Note: make sure you have setup the Python virtual environment (venv) before installing the Flask library.
 
 ## Programming endpoints
 
