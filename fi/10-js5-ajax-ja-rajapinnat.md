@@ -257,7 +257,7 @@ XML on HTML:n tapaan merkintäkieli (_markup language_). Se on tarkoitettu tiedo
     </picture>
     <picture>
         <name> Makaava kissa </name>
-        <Description> Tässä kuvassa kissa makaa. </Description>
+        <description> Tässä kuvassa kissa makaa. </description>
         <address> http://placecats.com/421/251 </address>
     </picture>
 </images>

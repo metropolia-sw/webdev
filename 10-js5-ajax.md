@@ -257,7 +257,7 @@ XML is a markup language, like HTML. It is intended for storing and transferring
     </picture>
     <picture>
         <name> Lying cat </name>
-        <Description> In this picture, the cat is lying. </Description>
+        <description> In this picture, the cat is lying. </description>
         <address> http://placecats.com/421/251 </address>
     </picture>
 </images>
