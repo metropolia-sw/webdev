@@ -197,11 +197,13 @@ You can choose which assignments you want to do based on your skill level. Just 
 
 3. Open `t3` folder in your IDE/editor. Add HTML by using innerHTML property. (**2p**)
    - Add the following HTML code to the element with `id="target"`. Add the values from 'names' array to the `<li>` elements in a for-loop.
+   
    ```html
    <li>John</li>
    <li>Paul</li>
    <li>Jones</li>
    ```
+   
 4. Open `t4` folder in your IDE/editor. Add HTML by using `createElement()` and `appendChild` methods. (**2p**)
    - Add the following HTML code to the element with `id="target"`. Add the values from 'students' array to the `<option>` elements in a for-loop.
 
@@ -215,6 +217,7 @@ You can choose which assignments you want to do based on your skill level. Just 
 
 5. Open `t5` folder in your IDE/editor. Create multiple `<article>` elements that contain heading, image, image caption and text and populate them with the data from `picArray`. Add the articles to the `<section>` element. (**5p**)
    - The structure of the articles should be this:
+   
    ```html
    <article class="card">
      <h2>title_from_picArray</h2>
@@ -225,6 +228,7 @@ You can choose which assignments you want to do based on your skill level. Just 
      <p>description_from_picArray</p>
    </article>
    ```
+   
 6. Open `t6` folder in your IDE/editor. Make a script that opens an alert window that says 'Button Clicked' when the `<button>` element is clicked. (**1p**)
 7. Open `t7` folder in your IDE/editor. Make a hover effect with JavaScript. (**2p**)
    - when user mouses over `<p id="trigger">` change the picture of `<img id="target">` form `picA.jpg` to `picB.jpg`
@@ -242,13 +246,23 @@ You can choose which assignments you want to do based on your skill level. Just 
     - remember to stop the default action of the form
     - you can use [attribute selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors) in querySelector() to select the `<input>` elements
     - example output: `Your name is Luke Skywalker`
-11. Continue task 5. Folder `t11` already exists. Follow the instructions in `t11.txt`. Modify the program to open large image in a [modal](#modal) when `<article>` is clicked. (**6p**) - kick yourself at this point if you used innerHTML to create the `<article>` and its content. - add the following html code between `</div>` and `</body>` manually to the HTML-document (no JS)
-`html
+11. Continue task 5. Folder `t11` already exists. Follow the instructions in `t11.txt`. Modify the program to open large image in a [modal](#modal) when `<article>` is clicked. (**6p**)
+    - kick yourself at this point if you used innerHTML to create the `<article>` and its content.
+    - add the following html code between `</div>` and `</body>` manually to the HTML-document (no JS)
+
+    ```html
     <dialog>
-       <span>&#x2715;</span>
-       <img>
+      <span>&#x2715;</span>
+      <img>
     </dialog>
-    ` - picArray has two images for each item: medium and large. Medium is used in the `<img>` inside the `<article>` and large is used in the `<img>` inside the `<dialog>`. - use [showModal() and close()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) functions to show and hide `<dialog>` - the same time you are opening the modal, you should put the large image to the `<img>` in the modal. - Don't forget to add `alt` attribute. - use `<span>` inside `<dialog>` to close the modal.
+    ```
+
+    - picArray has two images for each item: medium and large. Medium is used in the `<img>` inside the `<article>` and large is used in the `<img>` inside the `<dialog>`.
+    - use [showModal() and close()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLDialogElement#instance_methods) functions to show and hide `<dialog>`
+    - the same time you are opening the modal, you should put the large image to the `<img>` in the modal.
+    - Don't forget to add `alt` attribute.
+    -  use `<span>` inside `<dialog>` to close the modal.
+
 <hr>
 <sub id="modal"><sup>- A modal is a dialog box/popup window that is displayed on top of the current page</sup></sub>
 
